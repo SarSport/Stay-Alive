@@ -1,0 +1,7 @@
+fos_user_registration_form_firstName: "Имя:"
+fos_user_registration_form_lastName: "Фамилия:"
+fos_user_registration_form_secondName: "Отчество:"
+fos_user_registration_form_birthday: "Дата рождения:"
+fos_user_registration_form_sex: "Пол:"
+fos_user_registration_form_sex_man: муж.
+fos_user_registration_form_sex_woman: жен.

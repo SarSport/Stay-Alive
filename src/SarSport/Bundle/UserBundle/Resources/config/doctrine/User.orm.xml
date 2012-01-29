@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="SarSport\Bundle\UserBundle\Entity\User" table="sarsport_user">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="integer" column="id">
+      <generator strategy="AUTO"/>
+    </id>
+    <field name="firstName" type="string" column="first_name" length="50"/>
+    <field name="lastName" type="string" column="last_name" length="100"/>
+    <field name="secondName" type="string" column="second_name" length="100" nullable="true"/>
+    <field name="birthday" type="date" column="birthday"/>
+    <field name="sex" type="integer" column="sex"/>
+
+    <many-to-many field="groups" target-entity="SarSport\Bundle\UserBundle\Entity\Group">
+        <join-table name="sarsport_user_user_group">
+            <join-columns>
+                <join-column id="user_id" referenced-column-name="id" />
+            </join-columns>
+            <inverse-join-columns>
+                <join-column id="group_id" referenced-column-name="id" />
+            </inverse-join-columns>
+        </join-table>
+    </many-to-many>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

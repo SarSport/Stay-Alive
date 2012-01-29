@@ -1,0 +1,7 @@
+parameters:
+#    sar_sport_rest_user.example.class: SarSport\Bundle\RestUserBundle\Example
+
+services:
+#    sar_sport_rest_user.example:
+#        class: %sar_sport_rest_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

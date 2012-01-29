@@ -1,0 +1,6 @@
+vendor/*
+app/logs/*
+app/cache/*
+app/config/parameters.ini
+app/phpunit.xml
+web/bundles/*

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ asset('/bundles/default/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('/bundles/default/css/style.css') }}">
+        {% block stylesheets %}{% endblock %}
+        {% block favicon %}<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />{% endblock %}
+    </head>
+    <body>
+        {% block body %}
+            {% block topbar %}{% include '::topbar.html.twig' %}{% endblock %}
+            {% block container %}
+                <div class="container-fluid">
+                    {% block sidebar %}
+                    <div class="sidebar">
+                        {% block leftMenu %}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <div class="wel">
+                                    <div class="clearfix"><a href="#"></a></div>
+                                </div>
+                            {% endif %}
+                        {% endblock %}
+                    </div>
+                    {% endblock %}
+                    <div class="content">
+                        {% block flashMessages %}
+                            {% block errorMmessage %}
+                                {% if app.session.flash('error') %}
+                                    <div class="alert-message error">
+                                        <p><em>Error</em>: {{ app.session.flash('error') }}</p>
+                                    </div>
+                                {% endif %}
+                            {% endblock %}
+                            {% block successMessage %}
+                                {% if app.session.flash('notice') %}
+                                    <div class="alert-message success">
+                                        <p><em>Notice</em>: {{ app.session.flash('notice') }}</p>
+                                    </div>
+                                {% endif %}
+                            {% endblock %}
+                        {% endblock %}
+                        <div class="hero-unit">
+                            {% block content %}{% endblock %}
+                        </div>
+                        {% block footer %}<footer>© author Dmitry Petrov aka fightmaster 2011</footer>{% endblock %}
+                    </div>
+                </div>
+            {% endblock %}
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
+        http://symfony.com/schema/dic/services/constraint-mapping-1.0.xsd">
+
+    <class name="SarSport\Bundle\UserBundle\Entity\User">
+        <property name="firstName">
+            <constraint name="NotBlank">
+                <option name="message">sarsport_user.firstName.blank</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="MinLength">
+                <option name="limit">2</option>
+                <option name="message">sarsport_user.firstName.short</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">50</option>
+                <option name="message">sarsport_user.firstName.long</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+
+        <property name="lastName">
+            <constraint name="NotBlank">
+                <option name="message">sarsport_user.lastName.blank</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="MinLength">
+                <option name="limit">2</option>
+                <option name="message">sarsport_user.lastName.short</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">100</option>
+                <option name="message">sarsport_user.lastName.long</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+
+        <property name="secondName">
+            <constraint name="MinLength">
+                <option name="limit">2</option>
+                <option name="message">sarsport_user.secondName.short</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">100</option>
+                <option name="message">sarsport_user.secondName.long</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+
+        <property name="birthday">
+            <constraint name="NotBlank">
+                <option name="message">sarsport_user.birthday.blank</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="Date">
+                <option name="message">sarsport_user.birthday.invalid</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+
+        <property name="sex">
+            <constraint name="NotBlank">
+                <option name="message">sarsport_user.sex.blank</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="Min">
+                <option name="limit">1</option>
+                <option name="message">sarsport_user.sex.short</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">2</option>
+                <option name="message">sarsport_user.sex.long</option>
+                <option name="groups">
+                    <value>Registration</value>
+                    <value>Profile</value>
+                </option>
+            </constraint>
+        </property>
+    </class>
+
+</constraint-mapping>

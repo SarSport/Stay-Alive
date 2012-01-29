@@ -1,0 +1,18 @@
+<div class="topbar">
+    <div class="topbar-inner">
+        <div class="container-fluid">
+        <a class="brand" href="#">{{ 'brand.name'|trans}}</a>
+            <p class="pull-right">
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a> |
+                <a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %}
+            </p>
+        </div>
+    </div>
+</div>
