@@ -77,3 +77,7 @@
 [EscapeWSSEAuthenticationBundle]
     git=https://github.com/escapestudios/EscapeWSSEAuthenticationBundle.git
     target=bundles/Escape/WSSEAuthenticationBundle
+
+[FOSCommentBundle]
+    git=https://github.com/FriendsOfSymfony/FOSCommentBundle.git
+    target=bundles/FOS/CommentBundle

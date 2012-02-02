@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new SarSport\Bundle\UserBundle\SarSportUserBundle(),
             new SarSport\Bundle\RestUserBundle\SarSportRestUserBundle(),
             new Escape\WSSEAuthenticationBundle\EscapeWSSEAuthenticationBundle(),
+            new FOS\CommentBundle\FOSCommentBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
