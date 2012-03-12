@@ -1,6 +1,7 @@
 #banner-top {
     height:80px;
     margin-top: 40px;
+    border-bottom: solid 2px #CCC;
 }
 
 #sarsport-logo-text {
