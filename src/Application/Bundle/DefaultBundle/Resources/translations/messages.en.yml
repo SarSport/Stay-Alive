@@ -1,2 +1,9 @@
 brand:
-    name: Common sportsman database
+    name: Stay Alive
+stay-alive:
+    designer:
+        name: Averjanov Alexey
+        text: designer of the race
+    menu-top:
+        information: Information
+        contacts: Contacts

@@ -1,0 +1,47 @@
+#banner-top {
+    background-image:url(../images/banner-top-background.png);
+}
+
+#content_wrapper{
+    float: left;
+    width: 100%;
+}
+.stay-alive-designer-name {
+    font-size:1.2em;
+    font-weight:bold;
+}
+
+#main_column{
+    border-right:1px solid #999;
+    padding-right:20px;
+}
+
+.latest_item {
+    padding-left:32px;
+    padding-top:4px;
+    padding-bottom:6px;
+    font-size:13px;
+}
+
+.latest_lecture {
+    background-image:url(../images/navbar_icons/lecture.png);
+    background-repeat:no-repeat;
+}
+
+.latest_quiz {
+    background-image:url(../images/navbar_icons/quiz.png);
+    background-repeat:no-repeat;
+}
+
+.latest_assignment {
+    background-image:url(../images/navbar_icons/assignment.png);
+    background-repeat:no-repeat;
+}
+
+.right_category {
+    margin-bottom:15px;
+}
+
+.due_date {
+    font-size:10px;
+}

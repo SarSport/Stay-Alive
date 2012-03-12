@@ -1,2 +1,9 @@
 brand:
-    name: Единая база спортсменов
+    name: Остаться в Живых
+stay-alive:
+    designer:
+        name: Аверьянов Алексей
+        text: дизайнер гонки
+    menu-top:
+        information: Информация
+        contacts: Контакты

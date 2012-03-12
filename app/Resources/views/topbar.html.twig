@@ -1,18 +1,33 @@
-<div class="topbar">
-    <div class="topbar-inner">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
         <div class="container-fluid">
-        <a class="brand" href="#">{{ 'brand.name'|trans}}</a>
-            <p class="pull-right">
-            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-                <a href="{{ path('fos_user_security_logout') }}">
-                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-                </a>
-            {% else %}
-                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a> |
-                <a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
-            {% endif %}
-            </p>
+            <a class="brand" href="{{ path('DefaultBundle_homepage') }}">
+                {{ 'brand.name'|trans}}<span style="background-color:#387690;padding-top:100px" class="label warning">{{ constant("Application\\Bundle\\DefaultBundle\\Version::VERSION") }}</span>
+            </a>
+            <ul class="nav pull-right">
+                <li><a href="#">About</a></li>
+
+
+
+                <li><a href="#">Contact Us</a></li>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <li>
+                    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+                </li>
+                <li>
+                    <a href="{{ path('fos_user_security_logout') }}">
+                        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                    </a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                </li>
+                <li>
+                    <a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
+                </li>
+                {% endif %}
+            </ul>
         </div>
     </div>
 </div>

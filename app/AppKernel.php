@@ -18,14 +18,16 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
 
-            new FOS\RestBundle\FOSRestBundle(),
-            new JMS\SerializerBundle\JMSSerializerBundle($this),
+
             new Application\Bundle\DefaultBundle\DefaultBundle(),
-            new FOS\UserBundle\FOSUserBundle(),
             new SarSport\Bundle\UserBundle\SarSportUserBundle(),
             new SarSport\Bundle\RestUserBundle\SarSportRestUserBundle(),
-            new Escape\WSSEAuthenticationBundle\EscapeWSSEAuthenticationBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
             new FOS\CommentBundle\FOSCommentBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle($this),
+            new Escape\WSSEAuthenticationBundle\EscapeWSSEAuthenticationBundle(),
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

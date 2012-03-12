@@ -130,6 +130,13 @@ fos_user:
         address:        noreply@sarsport.ru
         sender_name:    SarSport common sportsmen base
 
+fos_comment:
+    db_driver: orm
+    class:
+        model:
+            comment: Application\Bundle\DefaultBundle\Entity\Comment
+            thread: Application\Bundle\DefaultBundle\Entity\Thread
+
 escape_wsse_authentication:
     provider_class: Escape\WSSEAuthenticationBundle\Security\Authentication\Provider\Provider
     listener_class: Escape\WSSEAuthenticationBundle\Security\Firewall\Listener
