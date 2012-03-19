@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * This file is part of the SarSportApplicationBundle package.
+ *
+ * (c) Dmitry Petrov aka fightmaster <old.fightmaster@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace SarSport\Bundle\ApplicationBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -18,7 +27,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('sar_sport_application');
+        $rootNode = $treeBuilder->root('sarsport_application');
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for

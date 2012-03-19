@@ -1,0 +1,65 @@
+<h1>Application</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Teamname</th>
+            <td>{{ entity.teamName }}</td>
+        </tr>
+        <tr>
+            <th>Firstplayername</th>
+            <td>{{ entity.firstPlayerName }}</td>
+        </tr>
+        <tr>
+            <th>Firstplayerphonenumber</th>
+            <td>{{ entity.firstPlayerPhonenumber }}</td>
+        </tr>
+        <tr>
+            <th>Secondplayername</th>
+            <td>{{ entity.secondPlayerName }}</td>
+        </tr>
+        <tr>
+            <th>Secondplayerphonenumber</th>
+            <td>{{ entity.secondPlayerPhonenumber }}</td>
+        </tr>
+        <tr>
+            <th>Comment</th>
+            <td>{{ entity.comment }}</td>
+        </tr>
+        <tr>
+            <th>Additionalmaps</th>
+            <td>{{ entity.additionalMaps }}</td>
+        </tr>
+        <tr>
+            <th>Tshirt</th>
+            <td>{{ entity.tShirt }}</td>
+        </tr>
+        <tr>
+            <th>Racename</th>
+            <td>{{ entity.raceName }}</td>
+        </tr>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('application') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('application_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('application_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>

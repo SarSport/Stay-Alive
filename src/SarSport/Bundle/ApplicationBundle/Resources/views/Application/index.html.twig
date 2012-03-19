@@ -1,0 +1,53 @@
+<h1>Application list</h1>
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Teamname</th>
+            <th>Firstplayername</th>
+            <th>Firstplayerphonenumber</th>
+            <th>Secondplayername</th>
+            <th>Secondplayerphonenumber</th>
+            <th>Comment</th>
+            <th>Additionalmaps</th>
+            <th>Tshirt</th>
+            <th>Racename</th>
+            <th>Id</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('application_show', { 'id': entity.id }) }}">{{ entity.teamName }}</a></td>
+            <td>{{ entity.firstPlayerName }}</td>
+            <td>{{ entity.firstPlayerPhonenumber }}</td>
+            <td>{{ entity.secondPlayerName }}</td>
+            <td>{{ entity.secondPlayerPhonenumber }}</td>
+            <td>{{ entity.comment }}</td>
+            <td>{{ entity.additionalMaps }}</td>
+            <td>{{ entity.tShirt }}</td>
+            <td>{{ entity.raceName }}</td>
+            <td>{{ entity.id }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('application_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('application_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('application_new') }}">
+            Create a new entry
+        </a>
+    </li>
+</ul>

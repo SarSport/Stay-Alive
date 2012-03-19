@@ -27,7 +27,6 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new Escape\WSSEAuthenticationBundle\EscapeWSSEAuthenticationBundle(),
-,
             new SarSport\Bundle\ApplicationBundle\SarSportApplicationBundle(),
         );
 
