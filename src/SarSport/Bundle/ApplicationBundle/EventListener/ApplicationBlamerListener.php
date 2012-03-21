@@ -56,7 +56,7 @@ class ApplicationBlamerListener implements EventSubscriberInterface
      */
     public function blame(ApplicationEvent $event)
     {
-        $application= $event->getApplication();
+        $application = $event->getApplication();
 
         if (!$application instanceof SignedApplicationInterface) {
             if ($this->logger) {
@@ -74,8 +74,8 @@ class ApplicationBlamerListener implements EventSubscriberInterface
             return;
         }
 
-        if ($this->securityContext->isGranted('IS_AUTHENTICATED_FULLY')) {
-            $application->setAuthor($this->securityContext->getToken()->getUser());
+        if ($this->securityContext->isGranted('IS_AUTHENTICATED_FULLY') && $application->getUser() == null) {
+            $application->setUser($this->securityContext->getToken()->getUser());
         }
     }
 

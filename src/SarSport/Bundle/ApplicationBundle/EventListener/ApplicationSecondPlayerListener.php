@@ -16,15 +16,15 @@ use SarSport\Bundle\ApplicationBundle\Event\ApplicationEvent;
 use SarSport\Bundle\ApplicationBundle\Model\ApplicationInterface;
 use SarSport\Bundle\ApplicationBundle\Model\SignedApplicationInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\HttpKernel\Log\LoggerInterface;
 use Symfony\Component\Security\Core\SecurityContextInterface;
-use DateTime;
 
 /**
- * Updates date and time in the application
+ * Sets null to all second player attributes if it is null
  *
  * @author Dmitry Petrov aka fightmaster <old.fightmaster@gmail.com>
  */
-class ApplicationCreatedAtListener implements EventSubscriberInterface
+class ApplicationSecondPlayerListener implements EventSubscriberInterface
 {
     /**
      * @var SecurityContext
@@ -43,19 +43,24 @@ class ApplicationCreatedAtListener implements EventSubscriberInterface
     }
 
     /**
-     * Update DateTime value in application
+     * Sets null to all second player attributes if it is null
      *
      * @param \SarSport\Bundle\ApplicationBundle\Event\ApplicationEvent $event
      * @return void
      */
-    public function setCreatedAt(ApplicationEvent $event)
+    public function checkSecondPlayer(ApplicationEvent $event)
     {
         $application = $event->getApplication();
-        $application->setCreatedAt(new DateTime('now'));
+        if ($application->getSecondPlayerName() == null) {
+            $application->setSecondPlayerName(null);
+            $application->setSecondPlayerBirthday(null);
+            $application->setSecondPlayerSex(null);
+            $application->setSecondPlayerTShirt(null);
+        }
     }
 
     static public function getSubscribedEvents()
     {
-        return array(Events::APPLICATION_CREATE => 'setCreatedAt');
+        return array(Events::APPLICATION_PRE_PERSIST => 'checkSecondPlayer');
     }
 }

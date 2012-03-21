@@ -50,7 +50,7 @@ class ApplicationUpdatedAtListener implements EventSubscriberInterface
      */
     public function setUpdatedAt(ApplicationEvent $event)
     {
-        $application= $event->getApplication();
+        $application = $event->getApplication();
 
         if ($application->getId() != null) {
             $application->setUpdatedAt(new DateTime('now'));

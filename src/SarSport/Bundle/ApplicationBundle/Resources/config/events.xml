@@ -30,5 +30,10 @@
             <tag name="kernel.event_listener" event="sarsport_application.application.create" method="setCreatedAt" />
             <argument type="service" id="security.context" on-invalid="null" />
         </service>
+        <service id="sarsport_application.listener.application_second_player" class="SarSport\Bundle\ApplicationBundle\EventListener\ApplicationSecondPlayerListener">
+            <!-- TODO: 2.1 <tag name="kernel.event_subscriber" /> -->
+            <tag name="kernel.event_listener" event="sarsport_application.application.pre_persist" method="checkSecondPlayer" />
+            <argument type="service" id="security.context" on-invalid="null" />
+        </service>
     </services>
 </container>
