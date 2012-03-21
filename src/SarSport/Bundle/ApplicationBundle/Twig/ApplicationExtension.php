@@ -13,13 +13,47 @@ namespace SarSport\Bundle\ApplicationBundle\Twig;
 
 use Twig_Extension;
 use Twig_Function_Method;
+use Symfony\Component\Security\Core\SecurityContextInterface;
 use SarSport\Bundle\ApplicationBundle\Entity\Application;
+use SarSport\Bundle\ApplicationBundle\Model\ApplicationInterface;
+use SarSport\Bundle\ApplicationBundle\Model\SignedApplicationInterface;
 
 /**
  * @author Dmitry Petrov aka fightmaster <old.fightmaster@gmail.com>
  */
 class ApplicationExtension extends Twig_Extension
 {
+
+    /**
+     * @var SecurityContext
+     */
+    protected $securityContext;
+
+    /**
+     * Constructor.
+     *
+     * @param SecurityContextInterface $securityContext
+     */
+    public function __construct(SecurityContextInterface $securityContext)
+    {
+        $this->securityContext = $securityContext;
+    }
+
+    public function isOwner(ApplicationInterface $application)
+    {
+        if ($this->securityContext->getToken() !== null) {
+            if ($this->securityContext->isGranted(array('ROLE_ADMIN'))) {
+                return true;
+            } elseif ($application instanceof SignedApplicationInterface) {
+                if ($this->securityContext->getToken()->getUser()->getId() == $application->getUser()->getId()) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
     /**
      * Returns competition name
      *
@@ -50,6 +84,7 @@ class ApplicationExtension extends Twig_Extension
     {
         return array(
             'sarsport_application_get_competition_name' => new Twig_Function_Method($this, 'getCompetitionName'),
+            'sarsport_application_is_owner' => new Twig_Function_Method($this, 'isOwner'),
         );
     }
 
