@@ -18,8 +18,8 @@
         <field name="group" type="string" column="competition_group" length="10"/>
         <field name="class" type="string" column="competition_class" length="10"/>
         <field name="city" type="string" column="city" length="100"/>
-        <field name="additionalMaps" column="additional_maps" type="boolean" />
-        <field name="firstPlayerTShirt" column="first_player_t_shirt" type="boolean" />
+        <field name="additionalMaps" column="additional_maps" type="boolean" nullable="true" />
+        <field name="firstPlayerTShirt" column="first_player_t_shirt" type="boolean" nullable="true" />
         <field name="secondPlayerTShirt" column="second_player_t_shirt" type="boolean" nullable="true" />
         <field name="status" type="integer" column="status"/>
         <field name="createdAt" type="datetime" column="created_at"/>
