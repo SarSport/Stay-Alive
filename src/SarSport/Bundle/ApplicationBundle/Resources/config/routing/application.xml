@@ -3,9 +3,9 @@
 <routes xmlns="http://symfony.com/schema/routing"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
-
-    <route id="application" pattern="/">
-        <default key="_controller">SarSportApplicationBundle:Application:index</default>
+    <route id="application_by_competition" pattern="/show/{competition}">
+        <default key="_controller">SarSportApplicationBundle:Application:showApplicationsByCompetition</default>
+        <requirement key="competition">giant|stay-alive</requirement>
     </route>
 
     <route id="application_show" pattern="/{id}/show">

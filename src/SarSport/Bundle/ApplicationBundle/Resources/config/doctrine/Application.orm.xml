@@ -9,15 +9,26 @@
         <id name="id" type="integer" column="id">
             <generator strategy="AUTO"/>
         </id>
+        <field name="competition" type="string" column="competition" length="255"/>
         <field name="teamName" type="string" column="team_name" length="50"/>
+        <field name="phonenumber" type="string" column="phonenumber" length="100"/>
         <field name="firstPlayerName" type="string" column="first_player_name" length="150"/>
-        <field name="firstPlayerPhonenumber" type="string" column="first_player_phonenumber" length="100"/>
         <field name="secondPlayerName" type="string" column="second_player_name" length="150" nullable="true"/>
-        <field name="secondPlayerPhonenumber" type="string" column="second_player_phonenumber" length="100" nullable="true"/>
         <field name="comment" type="string" column="comment" length="255" nullable="true"/>
+        <field name="group" type="string" column="competition_group" length="10"/>
+        <field name="class" type="string" column="competition_class" length="10"/>
+        <field name="city" type="string" column="city" length="100"/>
         <field name="additionalMaps" column="additional_maps" type="boolean" />
-        <field name="tShirt" column="t_shirt" type="boolean" />
-        <field name="raceName" type="string" column="race_name" length="255"/>
+        <field name="firstPlayerTShirt" column="first_player_t_shirt" type="boolean" />
+        <field name="secondPlayerTShirt" column="second_player_t_shirt" type="boolean" nullable="true" />
+        <field name="status" type="integer" column="status"/>
+        <field name="createdAt" type="datetime" column="created_at"/>
+        <field name="updatedAt" type="datetime" column="updated_at" nullable="true"/>
+        <field name="firstPlayerBirthday" type="date" column="first_player_birthday"/>
+        <field name="secondPlayerBirthday" type="date" column="second_player_birthday" nullable="true"/>
+        <field name="firstPlayerSex" type="integer" column="first_player_sex"/>
+        <field name="secondPlayerSex" type="integer" column="second_player_sex" nullable="true"/>
+
 
         <one-to-one field="user" target-entity="SarSport\Bundle\UserBundle\Entity\User">
             <join-column name="user_id" referenced-column-name="id" />

@@ -1,65 +1,65 @@
-<h1>Application</h1>
+{% extends "SarSportApplicationBundle::layout.html.twig" %}
+
+{% block sarsport_application_content %}
+<h1>{% trans with {'%teamName%': entity.teamName} from 'SarSportApplicationBundle' %}application.header.show{% endtrans %}</h1>
 
 <table class="record_properties">
     <tbody>
-        <tr>
-            <th>Teamname</th>
-            <td>{{ entity.teamName }}</td>
-        </tr>
-        <tr>
-            <th>Firstplayername</th>
-            <td>{{ entity.firstPlayerName }}</td>
-        </tr>
-        <tr>
-            <th>Firstplayerphonenumber</th>
-            <td>{{ entity.firstPlayerPhonenumber }}</td>
-        </tr>
-        <tr>
-            <th>Secondplayername</th>
-            <td>{{ entity.secondPlayerName }}</td>
-        </tr>
-        <tr>
-            <th>Secondplayerphonenumber</th>
-            <td>{{ entity.secondPlayerPhonenumber }}</td>
-        </tr>
-        <tr>
-            <th>Comment</th>
-            <td>{{ entity.comment }}</td>
-        </tr>
-        <tr>
-            <th>Additionalmaps</th>
-            <td>{{ entity.additionalMaps }}</td>
-        </tr>
-        <tr>
-            <th>Tshirt</th>
-            <td>{{ entity.tShirt }}</td>
-        </tr>
-        <tr>
-            <th>Racename</th>
-            <td>{{ entity.raceName }}</td>
-        </tr>
-        <tr>
-            <th>Id</th>
-            <td>{{ entity.id }}</td>
-        </tr>
+    <tr>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.competition{% endtrans %}</th>
+        <td>{{ entity.competition }}</td>
+    </tr>
+    <tr>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.teamName{% endtrans %}</th>
+        <td>{{ entity.teamName }}</td>
+    </tr>
+    <tr>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.phonenumber{% endtrans %}</th>
+        <td>{{ entity.phonenumber }}</td>
+    </tr>
+    <tr>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.comment{% endtrans %}</th>
+        <td>{{ entity.comment }}</td>
+    </tr>
+    <tr>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.player_fio{% endtrans %}</th>
+        <td>{{ entity.firstPlayerName }}</td>
+    </tr>
+    <tr>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.t-shirt{% endtrans %}</th>
+        <td>{{ entity.firstPlayerTShirt }}</td>
+    </tr>
+    <tr>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.player_fio{% endtrans %}</th>
+        <td>{{ entity.secondPlayerName }}</td>
+    </tr>
+    <tr>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.t-shirt{% endtrans %}</th>
+        <td>{{ entity.secondPlayerTShirt }}</td>
+    </tr>
+    <tr>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.additionalMaps{% endtrans %}</th>
+        <td>{{ entity.additionalMaps }}</td>
+    </tr>
     </tbody>
 </table>
 
 <ul class="record_actions">
     <li>
-        <a href="{{ path('application') }}">
-            Back to the list
+        <a href="{{ path('application_by_competition', {'competition': entity.competition}) }}">
+            {% trans from 'SarSportApplicationBundle' %}application.links.back_to_list{% endtrans %}
         </a>
     </li>
     <li>
         <a href="{{ path('application_edit', { 'id': entity.id }) }}">
-            Edit
+            {% trans from 'SarSportApplicationBundle' %}application.links.edit{% endtrans %}
         </a>
     </li>
     <li>
         <form action="{{ path('application_delete', { 'id': entity.id }) }}" method="post">
             {{ form_widget(delete_form) }}
-            <button type="submit">Delete</button>
+            <button type="submit">{% trans from 'SarSportApplicationBundle' %}application.links.delete{% endtrans %}</button>
         </form>
     </li>
 </ul>
+{% endblock sarsport_application_content %}

@@ -1,0 +1,55 @@
+{% extends "SarSportApplicationBundle::layout.html.twig" %}
+{% block sarsport_application_content %}
+<h1>
+    {% trans from 'SarSportApplicationBundle' %}application.header.list{% endtrans %}.
+{#    {% trans from 'SarSportApplicationbundle' %}{% sarsport_application_get_competition_name(competition)%}{% endtrans %}#}
+    {{ sarsport_application_get_competition_name(competition) |trans([], 'SarSportApplicationBundle') }}
+</h1>
+
+<table class="records_list">
+    <thead>
+    <tr>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.competition{% endtrans %}</th>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.teamName{% endtrans %}</th>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.phonenumber{% endtrans %}</th>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.comment{% endtrans %}</th>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.additionalMaps{% endtrans %}</th>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.player_fio{% endtrans %}</th>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.player_fio{% endtrans %}</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+    <tr>
+        <td>{{ entity.competition }}</td>
+        <td><a href="{{ path('application_show', { 'id': entity.id }) }}">{{ entity.teamName }}</a></td>
+        <td>{{ entity.phonenumber }}</td>
+        <td>{{ entity.comment }}</td>
+        <td>{{ entity.additionalMaps }}</td>
+        <td>{{ entity.firstPlayerName }}</td>
+        <td>{{ entity.secondPlayerName }}</td>
+
+        <td>
+            <ul>
+                <li>
+                    <a href="{{ path('application_show', { 'id': entity.id }) }}">show</a>
+                </li>
+                <li>
+                    <a href="{{ path('application_edit', { 'id': entity.id }) }}">{% trans from 'SarSportApplicationBundle' %}application.links.edit{% endtrans %}</a>
+                </li>
+            </ul>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<ul>
+    <li>
+        <a href="{{ path('application_new') }}">
+            {% trans from 'SarSportApplicationBundle' %}application.links.create_new_application{% endtrans %}
+        </a>
+    </li>
+</ul>
+{% endblock sarsport_application_content %}

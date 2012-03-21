@@ -1,16 +1,12 @@
-<h1>Application creation</h1>
+{% extends "SarSportApplicationBundle::layout.html.twig" %}
+{% block sarsport_application_content %}
+{% form_theme form 'SarSportApplicationBundle::form.html.twig' %}
+<h1>{% trans with {'%teamName%': entity.teamName} from 'SarSportApplicationBundle' %}application.header.new{% endtrans %}</h1>
 
 <form action="{{ path('application_create') }}" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
     <p>
-        <button type="submit">Create</button>
+        <button type="submit">{% trans from 'SarSportApplicationBundle' %}application.links.send_application{% endtrans %}</button>
     </p>
 </form>
-
-<ul class="record_actions">
-    <li>
-        <a href="{{ path('application') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+{% endblock sarsport_application_content %}

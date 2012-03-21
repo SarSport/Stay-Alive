@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping
+        http://symfony.com/schema/dic/services/constraint-mapping-1.0.xsd">
+
+    <class name="SarSport\Bundle\ApplicationBundle\Entity\Application">
+        <property name="teamName">
+            <constraint name="NotBlank">
+                <option name="message">application.form.teamName.blank</option>
+            </constraint>
+            <constraint name="MinLength">
+                <option name="limit">3</option>
+                <option name="message">application.form.teamName.short</option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">50</option>
+                <option name="message">application.form.teamName.long</option>
+            </constraint>
+        </property>
+
+        <property name="firstPlayerName">
+            <constraint name="NotBlank">
+                <option name="message">application.form.player_fio.blank</option>
+            </constraint>
+            <constraint name="MinLength">
+                <option name="limit">5</option>
+                <option name="message">application.form.player_fio.short</option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">150</option>
+                <option name="message">application.form.player_fio.long</option>
+            </constraint>
+        </property>
+
+        <property name="phonenumber">
+            <constraint name="NotBlank">
+                <option name="message">application.form.phonenumber.blank</option>
+            </constraint>
+            <constraint name="MinLength">
+                <option name="limit">6</option>
+                <option name="message">application.form.phonenumber.short</option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">100</option>
+                <option name="message">application.form.phonenumber.long</option>
+            </constraint>
+        </property>
+
+        <property name="secondPlayerName">
+            <constraint name="MinLength">
+                <option name="limit">5</option>
+                <option name="message">application.form.player_fio.short</option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">150</option>
+                <option name="message">application.form.player_fio.long</option>
+            </constraint>
+        </property>
+
+        <property name="comment">
+            <constraint name="MinLength">
+                <option name="limit">5</option>
+                <option name="message">application.form.comment.short</option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">255</option>
+                <option name="message">application.form.comment.long</option>
+            </constraint>
+        </property>
+
+        <property name="firstPlayerBirthday">
+            <constraint name="NotBlank">
+                <option name="message">application.form.birthday.blank</option>
+            </constraint>
+            <constraint name="Date">
+                <option name="message">application.form.birthday.invalid</option>
+            </constraint>
+        </property>
+
+        <property name="secondPlayerBirthday">
+            <constraint name="Date">
+                <option name="message">application.form.birthday.invalid</option>
+            </constraint>
+        </property>
+
+        <property name="firstPlayerSex">
+            <constraint name="NotBlank">
+                <option name="message">application.form.sex.blank</option>
+            </constraint>
+            <constraint name="Min">
+                <option name="limit">1</option>
+                <option name="message">application.form.sex.short</option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">2</option>
+                <option name="message">application.form.sex.long</option>
+            </constraint>
+        </property>
+
+        <property name="secondPlayerSex">
+            <constraint name="NotBlank">
+                <option name="message">application.form.sex.blank</option>
+            </constraint>
+            <constraint name="Min">
+                <option name="limit">1</option>
+                <option name="message">application.form.sex.short</option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">2</option>
+                <option name="message">application.form.sex.long</option>
+            </constraint>
+        </property>
+
+        <property name="city">
+            <constraint name="NotBlank">
+                <option name="message">application.form.city.blank</option>
+            </constraint>
+            <constraint name="MinLength">
+                <option name="limit">3</option>
+                <option name="message">application.form.city.short</option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">100</option>
+                <option name="message">application.form.city.long</option>
+            </constraint>
+        </property>
+    </class>
+
+</constraint-mapping>

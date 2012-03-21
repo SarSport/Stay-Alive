@@ -11,6 +11,8 @@
 
 namespace SarSport\Bundle\ApplicationBundle\Model;
 
+use DateTime;
+
 /**
  * @author Dmitry Petrov aka fightmaster <old.fightmaster@gmail.com>
  */
@@ -20,11 +22,6 @@ class Application implements ApplicationInterface
      * @var int $id
      */
     protected $id;
-
-    /**
-     * @var object User
-     */
-    protected $user;
 
     /**
      * @var string $teamName
@@ -39,17 +36,12 @@ class Application implements ApplicationInterface
     /**
      * @var string
      */
-    protected $firstPlayerPhonenumber;
+    protected $phonenumber;
 
     /**
      * @var string
      */
     protected $secondPlayerName;
-
-    /**
-     * @var string
-     */
-    protected $secondPlayerPhonenumber;
 
     /**
      * @var string
@@ -64,12 +56,67 @@ class Application implements ApplicationInterface
     /**
      * @var boolean
      */
-    protected $tShirt;
+    protected $firstPlayerTShirt;
+
+    /**
+     * @var boolean
+     */
+    protected $secondPlayerTShirt;
 
     /**
      * @var string
      */
-    protected $raceName;
+    protected $competition;
+
+    /**
+     * @var int
+     */
+    protected $status = 0;
+
+    /**
+     * @var DateTime
+     */
+    protected $createdAt;
+
+    /**
+     * @var DateTime|null
+     */
+    protected $updatedAt;
+
+    /**
+     * @var DateTime
+     */
+    protected $firstPlayerBirthday;
+
+    /**
+     * @var DateTime|null
+     */
+    protected $secondPlayerBirthday;
+
+    /**
+     * @var integer
+     */
+    protected $firstPlayerSex;
+
+    /**
+     * @var integer|null
+     */
+    protected $secondPlayerSex;
+
+    /**
+     * @var string
+     */
+    protected $group;
+
+    /**
+     * @var string
+     */
+    protected $class;
+
+    /**
+     * @var string
+     */
+    protected $city;
 
     /**
      * {@inheritDoc}
@@ -143,12 +190,12 @@ class Application implements ApplicationInterface
     /**
      * {@inheritDoc}
      *
-     * @param string $firstPlayerPhonenubmer
+     * @param string $phonenubmer
      * @return Application
      */
-    public function setFirstPlayerPhonenumber($firstPlayerPhonenubmer)
+    public function setPhonenumber($phonenubmer)
     {
-        $this->firstPlayerPhonenumber = $firstPlayerPhonenubmer;
+        $this->phonenumber = $phonenubmer;
 
         return $this;
     }
@@ -158,9 +205,9 @@ class Application implements ApplicationInterface
      *
      * @return string
      */
-    public function getFirstPlayerPhonenumber()
+    public function getPhonenumber()
     {
-        return $this->firstPlayerPhonenumber;
+        return $this->phonenumber;
     }
 
     /**
@@ -199,52 +246,6 @@ class Application implements ApplicationInterface
     /**
      * {@inheritDoc}
      *
-     * @param string $secondPlayerPhonenumber
-     * @return Application
-     */
-    public function setSecondPlayerPhonenumber($secondPlayerPhonenumber)
-    {
-        $this->secondPlayerPhonenumber = $secondPlayerPhonenumber;
-
-        return $this;
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * @return string
-     */
-    public function getSecondPlayerPhonenumber()
-    {
-        return $this->secondPlayerPhonenumber;
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * @param boolean $tShirt
-     * @return Application
-     */
-    public function setTShirt($tShirt)
-    {
-        $this->tShirt = $tShirt;
-
-        return $this;
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * @return boolean
-     */
-    public function getTShirt()
-    {
-        return $this->tShirt;
-    }
-
-    /**
-     * {@inheritDoc}
-     *
      * @param string $teamName
      * @return Application
      */
@@ -266,35 +267,12 @@ class Application implements ApplicationInterface
     }
 
     /**
-     * {@inheritDoc}
-     *
-     * @param object $user
+     * @param string $competition
      * @return Application
      */
-    public function setUser($user)
+    public function setCompetition($competition)
     {
-        $this->user = $user;
-
-        return $this;
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * @return object
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
-
-    /**
-     * @param string $raceName
-     * @return Application
-     */
-    public function setRaceName($raceName)
-    {
-        $this->raceName = $raceName;
+        $this->competition = $competition;
 
         return $this;
     }
@@ -302,8 +280,235 @@ class Application implements ApplicationInterface
     /**
      * @return string
      */
-    public function getRaceName()
+    public function getCompetition()
     {
-        return $this->raceName;
+        return $this->competition;
+    }
+
+    /**
+     * @param boolean $firstPlayerTShirt
+     * @return Application
+     */
+    public function setFirstPlayerTShirt($firstPlayerTShirt)
+    {
+        $this->firstPlayerTShirt = $firstPlayerTShirt;
+
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getFirstPlayerTShirt()
+    {
+        return $this->firstPlayerTShirt;
+    }
+
+    /**
+     * @param boolean $secondPlayerTShirt
+     * @return Application
+     */
+    public function setSecondPlayerTShirt($secondPlayerTShirt)
+    {
+        $this->secondPlayerTShirt = $secondPlayerTShirt;
+
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getSecondPlayerTShirt()
+    {
+        return $this->secondPlayerTShirt;
+    }
+
+    /**
+     * @param int $status
+     * @return Application
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param DateTime $time
+     * @return Application
+     */
+    public function setCreatedAt(DateTime $time)
+    {
+        $this->createdAt = $time;
+
+        return $this;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    /**
+     * @param DateTime|null $updatedAt
+     * @return Application
+     */
+    public function setUpdatedAt(DateTime $updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return DateTime|null
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param DateTime $firstPlayerBirthday
+     * @return Application
+     */
+    public function setFirstPlayerBirthday(DateTime $firstPlayerBirthday)
+    {
+        $this->firstPlayerBirthday = $firstPlayerBirthday;
+
+        return $this;
+    }
+
+    /**
+     * @return DateTime
+     */
+    public function getFirstPlayerBirthday()
+    {
+        return $this->firstPlayerBirthday;
+    }
+
+    /**
+     * @return Application
+     */
+    public function setFirstPlayerSex($firstPlayerSex)
+    {
+        $this->firstPlayerSex = $firstPlayerSex;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getFirstPlayerSex()
+    {
+        return $this->firstPlayerSex;
+    }
+
+    /**
+     * @param string $group
+     * @return Application
+     */
+    public function setGroup($group)
+    {
+        $this->group = $group;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGroup()
+    {
+        return $this->group;
+    }
+
+    /**
+     * @param DateTime|null $secondPlayerBirthday
+     * @return Application
+     */
+    public function setSecondPlayerBirthday(DateTime $secondPlayerBirthday)
+    {
+        $this->secondPlayerBirthday = $secondPlayerBirthday;
+
+        return $this;
+    }
+
+    /**
+     * @return DateTime|null
+     */
+    public function getSecondPlayerBirthday()
+    {
+        return $this->secondPlayerBirthday;
+    }
+
+    /**
+     * @param int|null $secondPlayerSex
+     * @return Application
+     */
+    public function setSecondPlayerSex($secondPlayerSex)
+    {
+        $this->secondPlayerSex = $secondPlayerSex;
+
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getSecondPlayerSex()
+    {
+        return $this->secondPlayerSex;
+    }
+
+    /**
+     * @param string $city
+     * @return Application
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * @param string $class
+     * @return Application
+     */
+    public function setClass($class)
+    {
+        $this->class = $class;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getClass()
+    {
+        return $this->class;
     }
 }

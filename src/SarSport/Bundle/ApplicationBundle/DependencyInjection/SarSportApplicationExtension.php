@@ -33,5 +33,8 @@ class SarSportApplicationExtension extends Extension
 
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
+        $loader->load('orm.xml');
+        $loader->load('twig.xml');
+        $loader->load('events.xml');
     }
 }

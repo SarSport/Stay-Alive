@@ -1,0 +1,28 @@
+application:
+  form:
+    teamName:
+      blank: Please enter a team name
+      short: The team name is too short
+      long: The team name is too long
+    player_fio:
+      blank: Please enter a player name
+      short: The player name is too short
+      long: The player name is too long
+    phonenumber:
+      blank: Please enter a phonenumber
+      short: The phone number is too short
+      long: The phonenumber is too long
+    comment:
+      short: The comment is too short
+      long: The comment is too long
+    birthday:
+      blank: Please enter a birthday
+      invalid: This value is not a valid date
+    sex:
+      blank: Please enter a sex
+      short: This value should be a valid number|This value should be %limit% or more
+      long: This value should be a valid number|This value should be %limit% or less
+    city:
+      blank: Please enter a city
+      short: The name of city is too short
+      long: The name of city is too long

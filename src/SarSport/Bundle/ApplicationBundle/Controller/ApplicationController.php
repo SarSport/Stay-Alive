@@ -6,6 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use SarSport\Bundle\ApplicationBundle\Entity\Application;
 use SarSport\Bundle\ApplicationBundle\Form\ApplicationType;
+use SarSport\Bundle\ApplicationBundle\Entity\ApplicationManager;
+use Symfony\Component\HttpFoundation\Response;
+use SarSport\Bundle\ApplicationBundle\Service\ApplicationService;
 
 /**
  * Application controller.
@@ -14,29 +17,35 @@ use SarSport\Bundle\ApplicationBundle\Form\ApplicationType;
 class ApplicationController extends Controller
 {
     /**
-     * Lists all Application entities.
+     * Find all applications by competition parameter
      *
+     * @param $competition
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction()
+    public function showApplicationsByCompetitionAction($competition)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $service = $this->getApplicationService();
 
-        $entities = $em->getRepository('SarSportApplicationBundle:Application')->findAll();
+        $entities = $service->findByCompetition($competition);
 
-        return $this->render('SarSportApplicationBundle:Application:index.html.twig', array(
-            'entities' => $entities
+        return $this->render('SarSportApplicationBundle:Application:showApplicationsByCompetition.html.twig', array(
+            'entities' => $entities,
+            'competition' => $competition
         ));
     }
 
     /**
      * Finds and displays a Application entity.
      *
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
      */
     public function showAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
+        $service = $this->getApplicationService();
 
-        $entity = $em->getRepository('SarSportApplicationBundle:Application')->find($id);
+        $entity = $service->findApplicationById($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Application entity.');
@@ -54,10 +63,12 @@ class ApplicationController extends Controller
     /**
      * Displays a form to create a new Application entity.
      *
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function newAction()
     {
-        $entity = new Application();
+        $service = $this->getApplicationService();
+        $entity = $service->create();
         $form   = $this->createForm(new ApplicationType(), $entity);
 
         return $this->render('SarSportApplicationBundle:Application:new.html.twig', array(
@@ -69,22 +80,23 @@ class ApplicationController extends Controller
     /**
      * Creates a new Application entity.
      *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function createAction()
     {
-        $entity  = new Application();
+        $service = $this->getApplicationService();
+        $entity = $service->create();
         $request = $this->getRequest();
         $form    = $this->createForm(new ApplicationType(), $entity);
         $form->bindRequest($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getEntityManager();
-            $em->persist($entity);
-            $em->flush();
+            $service->save($entity);
 
             return $this->redirect($this->generateUrl('application_show', array('id' => $entity->getId())));
             
         }
+        $tmp =  $form->createView();
 
         return $this->render('SarSportApplicationBundle:Application:new.html.twig', array(
             'entity' => $entity,
@@ -95,12 +107,14 @@ class ApplicationController extends Controller
     /**
      * Displays a form to edit an existing Application entity.
      *
+     * @param $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
      */
     public function editAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
-
-        $entity = $em->getRepository('SarSportApplicationBundle:Application')->find($id);
+        $service = $this->getApplicationService();
+        $entity = $service->findApplicationById($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Application entity.');
@@ -119,12 +133,14 @@ class ApplicationController extends Controller
     /**
      * Edits an existing Application entity.
      *
+     * @param $id
+     * @throws #M#C\SarSport\Bundle\ApplicationBundle\Controller\ApplicationController.createNotFoundException|?
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      */
     public function updateAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
-
-        $entity = $em->getRepository('SarSportApplicationBundle:Application')->find($id);
+        $service = $this->getApplicationService();
+        $entity = $service->findApplicationById($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Application entity.');
@@ -138,8 +154,7 @@ class ApplicationController extends Controller
         $editForm->bindRequest($request);
 
         if ($editForm->isValid()) {
-            $em->persist($entity);
-            $em->flush();
+            $service->save($entity);
 
             return $this->redirect($this->generateUrl('application_edit', array('id' => $id)));
         }
@@ -154,6 +169,9 @@ class ApplicationController extends Controller
     /**
      * Deletes a Application entity.
      *
+     * @param $id
+     * @throws #M#C\SarSport\Bundle\ApplicationBundle\Controller\ApplicationController.createNotFoundException|?
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function deleteAction($id)
     {
@@ -163,25 +181,36 @@ class ApplicationController extends Controller
         $form->bindRequest($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()->getEntityManager();
-            $entity = $em->getRepository('SarSportApplicationBundle:Application')->find($id);
+            $service = $this->getApplicationService();
+            $entity = $service->findApplicationById($id);
 
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Application entity.');
             }
 
-            $em->remove($entity);
-            $em->flush();
+            $service->remove($entity);
         }
 
         return $this->redirect($this->generateUrl('application'));
     }
 
+    /**
+     * @param $id
+     * @return \Symfony\Component\Form\Form
+     */
     private function createDeleteForm($id)
     {
         return $this->createFormBuilder(array('id' => $id))
             ->add('id', 'hidden')
             ->getForm()
         ;
+    }
+
+    /**
+     * @return ApplicationService
+     */
+    private function getApplicationService()
+    {
+        return $this->container->get('sarsport_application.application_service');
     }
 }
