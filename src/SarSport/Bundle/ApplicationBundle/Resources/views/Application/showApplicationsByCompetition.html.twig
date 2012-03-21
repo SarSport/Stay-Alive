@@ -16,7 +16,6 @@
         <th>{% trans from 'SarSportApplicationBundle' %}application.additionalMaps{% endtrans %}</th>
         <th>{% trans from 'SarSportApplicationBundle' %}application.player_fio{% endtrans %}</th>
         <th>{% trans from 'SarSportApplicationBundle' %}application.player_fio{% endtrans %}</th>
-        <th>Actions</th>
     </tr>
     </thead>
     <tbody>
@@ -29,17 +28,6 @@
         <td>{{ entity.additionalMaps }}</td>
         <td>{{ entity.firstPlayerName }}</td>
         <td>{{ entity.secondPlayerName }}</td>
-
-        <td>
-            <ul>
-                <li>
-                    <a href="{{ path('application_show', { 'id': entity.id }) }}">show</a>
-                </li>
-                <li>
-                    <a href="{{ path('application_edit', { 'id': entity.id }) }}">{% trans from 'SarSportApplicationBundle' %}application.links.edit{% endtrans %}</a>
-                </li>
-            </ul>
-        </td>
     </tr>
     {% endfor %}
     </tbody>

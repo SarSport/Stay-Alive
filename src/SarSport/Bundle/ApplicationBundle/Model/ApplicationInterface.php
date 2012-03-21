@@ -191,7 +191,7 @@ interface ApplicationInterface
      * @param DateTime|null $secondPlayerBirthday
      * @return ApplicationInterface
      */
-    public function setSecondPlayerBirthday(DateTime $secondPlayerBirthday);
+    public function setSecondPlayerBirthday($secondPlayerBirthday);
 
     /**
      * @return DateTime|null

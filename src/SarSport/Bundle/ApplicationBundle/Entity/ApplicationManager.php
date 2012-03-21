@@ -36,6 +36,14 @@ class ApplicationManager extends DoctrineManager
      */
     public function findByCompetition($competition)
     {
-        return $this->findBy(array('competition' => $competition));
+        $qb = $this->entityManager->createQueryBuilder();
+        $query = $qb->select('a', 'u')
+            ->from($this->getClass(), 'a')
+            ->innerJoin('a.user', 'u')
+            ->where('a.competition = :competition')
+            ->setParameter('competition', $competition)
+            ->getQuery();
+        return $query->execute();
+        //return $this->findBy(array('competition' => $competition));
     }
 }

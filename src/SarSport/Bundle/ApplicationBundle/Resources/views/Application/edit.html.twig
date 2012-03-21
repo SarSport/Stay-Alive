@@ -4,13 +4,14 @@
 {% form_theme edit_form 'SarSportApplicationBundle::form.html.twig' %}
 {% form_theme delete_form 'SarSportApplicationBundle::form.html.twig' %}
 <h1>{% trans with {'%teamName%': entity.teamName} from 'SarSportApplicationBundle' %}application.header.edit{% endtrans %}</h1>
-
-<form action="{{ path('application_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
-    {{ form_widget(edit_form) }}
-    <p>
-        <button type="submit">{% trans from 'SarSportApplicationBundle' %}application.links.edit{% endtrans %}</button>
-    </p>
-</form>
+    {% if sarsport_application_is_owner(entity) %}
+        <form action="{{ path('application_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+            {{ form_widget(edit_form) }}
+            <p>
+                <button type="submit">{% trans from 'SarSportApplicationBundle' %}application.links.edit{% endtrans %}</button>
+            </p>
+        </form>
+    {% endif %}
 
 <ul class="record_actions">
     <li>
@@ -18,11 +19,13 @@
             {% trans from 'SarSportApplicationBundle' %}application.links.back_to_list{% endtrans %}
         </a>
     </li>
-    <li>
-        <form action="{{ path('application_delete', { 'id': entity.id }) }}" method="post">
-            {{ form_widget(delete_form) }}
-            <button type="submit">{% trans from 'SarSportApplicationBundle' %}application.links.delete{% endtrans %}</button>
-        </form>
-    </li>
+    {% if sarsport_application_is_owner(entity) %}
+        <li>
+            <form action="{{ path('application_delete', { 'id': entity.id }) }}" method="post">
+                {{ form_widget(delete_form) }}
+                <button type="submit">{% trans from 'SarSportApplicationBundle' %}application.links.delete{% endtrans %}</button>
+            </form>
+        </li>
+    {% endif %}
 </ul>
 {% endblock sarsport_application_content %}

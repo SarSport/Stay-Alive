@@ -13,6 +13,7 @@
         <th>{% trans from 'SarSportApplicationBundle' %}application.teamName{% endtrans %}</th>
         <td>{{ entity.teamName }}</td>
     </tr>
+    {% if sarsport_application_is_owner(entity) %}
     <tr>
         <th>{% trans from 'SarSportApplicationBundle' %}application.phonenumber{% endtrans %}</th>
         <td>{{ entity.phonenumber }}</td>
@@ -21,6 +22,7 @@
         <th>{% trans from 'SarSportApplicationBundle' %}application.comment{% endtrans %}</th>
         <td>{{ entity.comment }}</td>
     </tr>
+    {% endif %}
     <tr>
         <th>{% trans from 'SarSportApplicationBundle' %}application.player_fio{% endtrans %}</th>
         <td>{{ entity.firstPlayerName }}</td>
@@ -50,16 +52,18 @@
             {% trans from 'SarSportApplicationBundle' %}application.links.back_to_list{% endtrans %}
         </a>
     </li>
-    <li>
-        <a href="{{ path('application_edit', { 'id': entity.id }) }}">
-            {% trans from 'SarSportApplicationBundle' %}application.links.edit{% endtrans %}
-        </a>
-    </li>
-    <li>
-        <form action="{{ path('application_delete', { 'id': entity.id }) }}" method="post">
-            {{ form_widget(delete_form) }}
-            <button type="submit">{% trans from 'SarSportApplicationBundle' %}application.links.delete{% endtrans %}</button>
-        </form>
-    </li>
+    {% if sarsport_application_is_owner(entity) %}
+        <li>
+            <a href="{{ path('application_edit', { 'id': entity.id }) }}">
+                {% trans from 'SarSportApplicationBundle' %}application.links.edit{% endtrans %}
+            </a>
+        </li>
+        <li>
+            <form action="{{ path('application_delete', { 'id': entity.id }) }}" method="post">
+                {{ form_widget(delete_form) }}
+                <button type="submit">{% trans from 'SarSportApplicationBundle' %}application.links.delete{% endtrans %}</button>
+            </form>
+        </li>
+    {% endif %}
 </ul>
 {% endblock sarsport_application_content %}

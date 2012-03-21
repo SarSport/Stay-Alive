@@ -440,7 +440,7 @@ class Application implements ApplicationInterface
      * @param DateTime|null $secondPlayerBirthday
      * @return Application
      */
-    public function setSecondPlayerBirthday(DateTime $secondPlayerBirthday)
+    public function setSecondPlayerBirthday($secondPlayerBirthday)
     {
         $this->secondPlayerBirthday = $secondPlayerBirthday;
 
