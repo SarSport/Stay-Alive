@@ -9,6 +9,8 @@ use SarSport\Bundle\ApplicationBundle\Form\ApplicationType;
 use SarSport\Bundle\ApplicationBundle\Entity\ApplicationManager;
 use Symfony\Component\HttpFoundation\Response;
 use SarSport\Bundle\ApplicationBundle\Service\ApplicationService;
+use SarSport\Bundle\UserBundle\Entity\User;
+use SarSport\Bundle\ApplicationBundle\Model\ApplicationInterface;
 
 /**
  * Application controller.
@@ -69,6 +71,7 @@ class ApplicationController extends Controller
     {
         $service = $this->getApplicationService();
         $entity = $service->create();
+        $this->fillDefaultData($entity);
         $form   = $this->createForm(new ApplicationType(), $entity);
 
         return $this->render('SarSportApplicationBundle:Application:new.html.twig', array(
@@ -212,5 +215,22 @@ class ApplicationController extends Controller
     private function getApplicationService()
     {
         return $this->container->get('sarsport_application.application_service');
+    }
+
+    /**
+     * Filling default data
+     *
+     * @param ApplicationInterface $application
+     */
+    private function fillDefaultData(ApplicationInterface $application)
+    {
+        $securityContext = $this->container->get('security.context');
+        /** @var User $user */
+        $user = $securityContext->getToken()->getUser();
+        if ($user instanceof User) {
+            $application->setFirstPlayerBirthday($user->getBirthday());
+            $application->setFirstPlayerName(trim($user->getLastName() . ' ' . $user->getFirstName() . ' ' . $user->getSecondName()));
+            $application->setFirstPlayerSex($user->getSex());
+        }
     }
 }
