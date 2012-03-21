@@ -13,7 +13,6 @@ namespace SarSport\Bundle\ApplicationBundle\EventListener;
 
 use SarSport\Bundle\ApplicationBundle\Events;
 use SarSport\Bundle\ApplicationBundle\Event\ApplicationEvent;
-use SarSport\Bundle\ApplicationBundle\Model\ApplicationInterface;
 use SarSport\Bundle\ApplicationBundle\Model\SignedApplicationInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Log\LoggerInterface;

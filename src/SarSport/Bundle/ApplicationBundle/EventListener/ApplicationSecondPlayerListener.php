@@ -13,11 +13,7 @@ namespace SarSport\Bundle\ApplicationBundle\EventListener;
 
 use SarSport\Bundle\ApplicationBundle\Events;
 use SarSport\Bundle\ApplicationBundle\Event\ApplicationEvent;
-use SarSport\Bundle\ApplicationBundle\Model\ApplicationInterface;
-use SarSport\Bundle\ApplicationBundle\Model\SignedApplicationInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\HttpKernel\Log\LoggerInterface;
-use Symfony\Component\Security\Core\SecurityContextInterface;
 
 /**
  * Sets null to all second player attributes if it is null
@@ -26,22 +22,6 @@ use Symfony\Component\Security\Core\SecurityContextInterface;
  */
 class ApplicationSecondPlayerListener implements EventSubscriberInterface
 {
-    /**
-     * @var SecurityContext
-     */
-    protected $securityContext;
-
-    /**
-     * Constructor.
-     *
-     * @param SecurityContextInterface $securityContext
-     * @param LoggerInterface $logger
-     */
-    public function __construct(SecurityContextInterface $securityContext)
-    {
-        $this->securityContext = $securityContext;
-    }
-
     /**
      * Sets null to all second player attributes if it is null
      *
