@@ -24,6 +24,19 @@ application:
     delete: Удалить
     edit: Редактировать
     send_application: Отправить заявку
+  email:
+    new_application:
+      subject: Новая заявка в %competition%.
+      message: |
+        %teamName% в составе %firstPlayerName% - %secondPlayerName% подали заявку на участие в соревновании.
+
+        Подробную информацию о заявке можно получить: %url%
+    update_application:
+      subject: Обновление заявки у %teamName%.
+      message: |
+        %teamName% обновили свои данные.
+
+        Подробную информацию о заявке можно получить: %url%
 
   competitions_name:
     multigonka: ОСТАТЬСЯ в ЖИВЫХ

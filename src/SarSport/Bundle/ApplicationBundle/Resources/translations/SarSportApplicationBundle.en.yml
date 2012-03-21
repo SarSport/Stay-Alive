@@ -24,6 +24,19 @@ application:
     delete: Delete
     edit: Edit
     send_application: Submit an application
+  email:
+    new_application:
+      subject: A new application to the %competition%.
+      message: |
+        %teamName% in the %firstPlayerName% - %secondPlayerName% applied to participate in the competition.
+
+        For more information on the application may be obtained: %url%
+    update_application:
+      subject: Updating an application for %teamName%.
+      message: |
+        %teamName% updated their data.
+
+        For more information on the application may be obtained: %url%
 
   competitions_name:
     multigonka: STAY ALIVE

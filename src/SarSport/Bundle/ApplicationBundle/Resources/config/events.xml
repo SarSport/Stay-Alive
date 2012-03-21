@@ -35,5 +35,16 @@
             <tag name="kernel.event_listener" event="sarsport_application.application.pre_persist" method="checkSecondPlayer" />
             <argument type="service" id="security.context" on-invalid="null" />
         </service>
+        <service id="sarsport_application.listener.application_notifier" class="SarSport\Bundle\ApplicationBundle\EventListener\ApplicationNotifierListener">
+            <!-- TODO: 2.1 <tag name="kernel.event_subscriber" /> -->
+            <tag name="kernel.event_listener" event="sarsport_application.application.post_persist" method="notify" />
+            <argument type="service" id="mailer" />
+            <argument type="service" id="router" />
+            <argument type="service" id="twig" />
+            <argument type="collection">
+                <argument>old.fightmaster@gmail.com</argument>
+            </argument>
+
+        </service>
     </services>
 </container>
