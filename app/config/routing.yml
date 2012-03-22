@@ -41,6 +41,9 @@ fos_comment_api:
     type: rest
     resource: "@FOSCommentBundle/Resources/config/routing.yml"
     prefix: /api
+StfalconPaymentBundle:
+    resource: "@StfalconPaymentBundle/Resources/config/routing/payment.xml"
+    prefix:   /payment
 
 # Internal routing configuration to handle ESI
 #_internal:

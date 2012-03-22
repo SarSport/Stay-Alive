@@ -28,6 +28,7 @@ class AppKernel extends Kernel
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new Escape\WSSEAuthenticationBundle\EscapeWSSEAuthenticationBundle(),
             new SarSport\Bundle\ApplicationBundle\SarSportApplicationBundle(),
+            new Stfalcon\Bundle\PaymentBundle\StfalconPaymentBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

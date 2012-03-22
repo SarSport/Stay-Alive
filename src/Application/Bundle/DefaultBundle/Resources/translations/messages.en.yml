@@ -19,6 +19,7 @@ stay-alive:
       video: Video
       photo: Photo
       article: Articles
+      pay: Pay for part
     menu-right:
       links: Links
       sportmir:

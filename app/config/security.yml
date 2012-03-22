@@ -31,6 +31,7 @@ security:
         - { path: /application/show/.*, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: /application/.*/show, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: /application/.*, roles: ROLE_USER }
+        - { path: /payment/.*, roles: ROLE_USER }
         - { path: /page/.*, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }

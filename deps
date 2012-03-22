@@ -92,3 +92,8 @@
 [FightmasterPublicationBundle]
     git=https://github.com/fightmaster/FightmasterPublicationBundle.git
     target=bundles/Fightmaster/PublicationBundle
+
+[StfalconPaymentBundle]
+    git=https://github.com/fightmaster/PaymentBundle.git
+    target=bundles/Stfalcon/Bundle/PaymentBundle
+

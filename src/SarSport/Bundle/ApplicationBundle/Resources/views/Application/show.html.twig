@@ -71,13 +71,14 @@
     <li>
         <form action="{{ path('application_delete', { 'id': entity.id }) }}" method="post">
             {{ form_widget(delete_form) }}
+            <a class="btn btn-success" href="{{ path('interkassa_payment_new') }}">
+                {% trans from 'SarSportApplicationBundle' %}application.links.pay{% endtrans %}
+            </a>
+            <a class="btn btn-info" href="{{ path('application_edit', { 'id': entity.id }) }}">
+                {% trans from 'SarSportApplicationBundle' %}application.links.edit{% endtrans %}
+            </a>
             <button type="submit" class="btn btn-danger"  onclick="javascripts:if (!confirm('{% trans from 'SarSportApplicationBundle' %}application.confirm.remove_application{% endtrans %}')) return false;">{% trans from 'SarSportApplicationBundle' %}application.links.delete{% endtrans %}</button>
         </form>
-    </li>
-    <li>
-        <a href="{{ path('application_edit', { 'id': entity.id }) }}">
-            {% trans from 'SarSportApplicationBundle' %}application.links.edit{% endtrans %}
-        </a>
     </li>
     {% endif %}
     <li>

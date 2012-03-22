@@ -8,7 +8,10 @@
         <form action="{{ path('application_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
             {{ form_widget(edit_form) }}
             <p>
-                <button type="submit" class="btn btn-primary">{% trans from 'SarSportApplicationBundle' %}application.links.edit{% endtrans %}</button>
+                <button type="submit" class="btn btn-info">{% trans from 'SarSportApplicationBundle' %}application.links.edit{% endtrans %}</button>
+                <a class="btn btn-success" href="{{ path('interkassa_payment_new') }}">
+                    {% trans from 'SarSportApplicationBundle' %}application.links.pay{% endtrans %}
+                </a>
             </p>
         </form>
     {% endif %}

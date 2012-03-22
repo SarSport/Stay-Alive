@@ -35,6 +35,7 @@ application:
     delete: Delete
     edit: Edit
     send_application: Submit an application
+    pay: Pay
   email:
     new_application:
       subject: A new application to the %competition%.

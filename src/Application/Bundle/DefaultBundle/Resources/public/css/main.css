@@ -46,6 +46,11 @@ ul.navbar {
     background-repeat:no-repeat;
 }
 
+.navbar_pay {
+    background-image:url(../images/navbar_icons/pay.png);
+    background-repeat:no-repeat;
+}
+
 .navbar_members {
     background-image:url(../images/navbar_icons/members.png);
     background-repeat:no-repeat;

@@ -35,6 +35,7 @@ application:
     delete: Удалить
     edit: Редактировать
     send_application: Отправить заявку
+    pay: Оплатить
   email:
     new_application:
       subject: Новая заявка в %competition%.
