@@ -66,24 +66,24 @@
     </tbody>
 </table>
 
-<ul class="record_actions">
+<ul class="unstyled">
+    {% if sarsport_application_is_owner(entity) %}
+    <li>
+        <form action="{{ path('application_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit" class="btn btn-danger"  onclick="javascripts:if (!confirm('{% trans from 'SarSportApplicationBundle' %}application.confirm.remove_application{% endtrans %}')) return false;">{% trans from 'SarSportApplicationBundle' %}application.links.delete{% endtrans %}</button>
+        </form>
+    </li>
+    <li>
+        <a href="{{ path('application_edit', { 'id': entity.id }) }}">
+            {% trans from 'SarSportApplicationBundle' %}application.links.edit{% endtrans %}
+        </a>
+    </li>
+    {% endif %}
     <li>
         <a href="{{ path('application_by_competition', {'competition': entity.competition}) }}">
             {% trans from 'SarSportApplicationBundle' %}application.links.back_to_list{% endtrans %}
         </a>
     </li>
-    {% if sarsport_application_is_owner(entity) %}
-        <li>
-            <a href="{{ path('application_edit', { 'id': entity.id }) }}">
-                {% trans from 'SarSportApplicationBundle' %}application.links.edit{% endtrans %}
-            </a>
-        </li>
-        <li>
-            <form action="{{ path('application_delete', { 'id': entity.id }) }}" method="post">
-                {{ form_widget(delete_form) }}
-                <button type="submit">{% trans from 'SarSportApplicationBundle' %}application.links.delete{% endtrans %}</button>
-            </form>
-        </li>
-    {% endif %}
 </ul>
 {% endblock sarsport_application_content %}

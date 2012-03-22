@@ -20,6 +20,8 @@ application:
   yes: yes
   no: no
   payment: Payment
+  confirm:
+    remove_application: Are you sure you want to delete the application?
 
   header:
     list: List of participants

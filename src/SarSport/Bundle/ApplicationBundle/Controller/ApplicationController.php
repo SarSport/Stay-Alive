@@ -190,11 +190,11 @@ class ApplicationController extends Controller
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find Application entity.');
             }
-
+            $competition = $entity->getCompetition();
             $service->remove($entity);
         }
 
-        return $this->redirect($this->generateUrl('application'));
+        return $this->redirect($this->generateUrl('application_by_competition', array('competition' => $competition)));
     }
 
     /**

@@ -20,6 +20,8 @@ application:
   yes: да
   no: нет
   payment: Оплата
+  confirm:
+    remove_application: Вы уверены, что хотите удалить заявку?
 
   header:
     list: Список участников
