@@ -7,3 +7,14 @@ stay-alive:
     menu-top:
         information: Информация
         contacts: Контакты
+    menu-left:
+      home: Главная
+      take_part: Подать заявку
+      stay-alive: Мультигонка
+      giant: Веломарафон
+      information: Информация
+      players: Участники
+      archive: Архив
+      video: Видео
+      photo: Фото
+      article: Статьи

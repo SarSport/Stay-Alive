@@ -7,3 +7,15 @@ stay-alive:
     menu-top:
         information: Information
         contacts: Contacts
+    menu-left:
+      home: Home
+      take_part: Take part
+      stay-alive: Multirace
+      giant: Cycling race
+      information: Information
+      players: Members
+      archive: Archive
+      video: Video
+      photo: Photo
+      article: Articles
+
