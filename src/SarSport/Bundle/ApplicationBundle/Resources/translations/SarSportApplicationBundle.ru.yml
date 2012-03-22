@@ -5,6 +5,7 @@ application:
   additionalMaps: Доп. комплект карт
   additionalMaps_short: Доп. к/к
   comment: Комментарий
+  player_fio: ФИО
   player_firstname: Имя
   player_lastname: Фамилия
   t-shirt: Футболка
@@ -18,6 +19,7 @@ application:
   empty_list: На данный момент нет заявок на участие в соревнованиях
   yes: да
   no: нет
+  payment: Оплата
 
   header:
     list: Список участников

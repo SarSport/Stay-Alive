@@ -18,4 +18,9 @@ stay-alive:
       video: Video
       photo: Photo
       article: Articles
+    menu-right:
+      links: Links
+      sportmir:
+        address: street 5th garden, 9B
+        phone: 47-000-1, 588-348
 

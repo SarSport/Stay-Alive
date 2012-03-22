@@ -5,6 +5,7 @@ application:
   additionalMaps: Add. maps
   additionalMaps_short: Add. maps
   comment: Comment
+  player_fio: Full name
   player_firstname: Firstname
   player_lastname: Lastname
   t-shirt: T-shirt
@@ -18,6 +19,7 @@ application:
   empty_list: There are currently no applications for participation in competitions
   yes: yes
   no: no
+  payment: Payment
 
   header:
     list: List of participants

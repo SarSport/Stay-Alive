@@ -60,70 +60,20 @@
                                 {% block sidebar_right %}
                                 <div class="span3 page-sidebar-right">
                                     <div class="right_category">
-                                        <h4>Header</h4>
+                                        <h4>{{ 'stay-alive.menu-right.links' | trans }}</h4>
                                         <ul style="list-style:none;margin:0px;padding:0px;border:0px;">
 
-                                            <li><div class="latest_item latest_quiz">
-                                                <a href="#">Some link</a>&nbsp;
-                                                <br><span class="due_date">Date</span>
-                                            </div></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="right_category">
-                                        <h4>Header 2</h4>
-                                        <ul style="list-style:none;margin:0px;padding:0px;border:0px;">
-
-                                            <li><div class="latest_item latest_assignment">
-                                                <a href="#">Some link2</a>&nbsp;
-                                                <br><span class="due_date">Date 2</span>
-                                            </div></li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="right_category">
-                                        <h4>Header3</h4>
-                                        <ul style="list-style:none;margin:0px;padding:0px;border:0px;">
-
-                                            <li><div class="latest_item latest_lecture">
-                                                text1&nbsp;
-                                            </div></li>
-
-                                            <li><div class="latest_item latest_lecture">
-                                                text2&nbsp;
-                                            </div></li>
-
-                                            <li><div class="latest_item latest_lecture">
-                                                text3&nbsp;
-                                            </div></li>
-
-                                            <li><div class="latest_item latest_lecture">
-                                                text4&nbsp;
-                                            </div></li>
-
-                                            <li><div class="latest_item latest_lecture">
-                                                text5&nbsp;
-                                            </div></li>
-
-                                            <li><div class="latest_item latest_lecture">
-                                                text6&nbsp;
-                                            </div></li>
-
-                                            <li><div class="latest_item latest_lecture">
-                                                text7&nbsp;
-                                            </div></li>
-
-                                            <li><div class="latest_item latest_lecture">
-                                                3.14 - Forms&nbsp;
-                                            </div></li>
-
-                                            <li><div class="latest_item latest_lecture">
-                                                text8
-                                            </div></li>
-
-                                            <li><div class="latest_item latest_lecture">
-                                                text9&nbsp;
-                                            </div></li>
+                                            <li>
+                                                <div class="thumbnail span2">
+                                                    {% image '@DefaultBundle/Resources/public/images/banners/sportmir.jpg'%}
+                                                    <a href="http://shop.sarsport.ru" class="thumbnail" target="_blank"><img src="{{ asset_url }}"/></a>
+                                                    {% endimage %}
+                                                    <div class="caption">
+                                                        {{ 'stay-alive.menu-right.sportmir.address' | trans }}<br />
+                                                        {{ 'stay-alive.menu-right.sportmir.phone' | trans }}
+                                                    </div>
+                                                </div
+                                            ></li>
                                         </ul>
                                     </div>
                                 </div>
