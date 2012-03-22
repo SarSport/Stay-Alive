@@ -5,8 +5,8 @@
                 {{ 'brand.name'|trans}}<span style="background-color:#387690;" class="label warning">{{ constant("Application\\Bundle\\DefaultBundle\\Version::VERSION") }}</span>
             </a>
             <ul class="nav pull-right">
-                <li><a href="#">{{ 'stay-alive.menu-top.information' | trans }}</a></li>
-                <li><a href="#">{{ 'stay-alive.menu-top.contacts' | trans }}</a></li>
+                <li><a href="{{ path('DefaultBundle_static_page', {'slug': 'about'}) }}">{{ 'stay-alive.menu-top.information' | trans }}</a></li>
+                <li><a href="{{ path('DefaultBundle_static_page', {'slug': 'contacts'}) }}">{{ 'stay-alive.menu-top.contacts' | trans }}</a></li>
                 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 <li>
                     <span>{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}</span>

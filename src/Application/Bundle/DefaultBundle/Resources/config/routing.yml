@@ -1,3 +1,8 @@
 DefaultBundle_homepage:
-    pattern:  /
-    defaults: { _controller: DefaultBundle:Default:index }
+  pattern:  /
+  defaults: { _controller: DefaultBundle:Default:index }
+DefaultBundle_static_page:
+  pattern:  page/{slug}
+  defaults: { _controller: DefaultBundle:Page:index }
+  requirements:
+    slug:  about|contacts|reglament-stay-alive|reglament-giant

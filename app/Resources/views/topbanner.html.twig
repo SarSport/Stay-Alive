@@ -1,7 +1,9 @@
 <div id="banner-top">
     <div id="sarsport-logo-text">
         <a href="{{ path('DefaultBundle_homepage') }}">
-            <img border="0" title="{{ 'brand.name'|trans }}" alt="{{ 'brand.name'|trans }}" src="{{ asset('bundles/default/images/stay-alive-logo-text.png') }}">
+            {% image '@DefaultBundle/Resources/public/images/stay-alive-logo-text.png'%}
+            <img border="0" title="{{ 'brand.name'|trans }}" alt="{{ 'brand.name'|trans }}" src="{{ asset_url }}"/>
+            {% endimage %}
         </a>
     </div>
     <div id="banner-sarsport-info">

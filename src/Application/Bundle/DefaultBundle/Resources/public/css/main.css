@@ -81,6 +81,11 @@ ul.navbar {
     background-repeat:no-repeat;
 }
 
+.navbar_reglament {
+    background-image:url(../images/navbar_icons/reglament.png);
+    background-repeat:no-repeat;
+}
+
 .navbar_forum {
     background-image:url(../images/navbar_icons/forum.png);
     background-repeat:no-repeat;
