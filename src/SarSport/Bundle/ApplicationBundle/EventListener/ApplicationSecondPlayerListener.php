@@ -31,8 +31,8 @@ class ApplicationSecondPlayerListener implements EventSubscriberInterface
     public function checkSecondPlayer(ApplicationEvent $event)
     {
         $application = $event->getApplication();
-        if ($application->getSecondPlayerName() == null) {
-            $application->setSecondPlayerName(null);
+        if ($application->getSecondPlayerFirstName() == null) {
+            $application->setSecondPlayerFirstName(null);
             $application->setSecondPlayerBirthday(null);
             $application->setSecondPlayerSex(null);
             $application->setSecondPlayerTShirt(null);

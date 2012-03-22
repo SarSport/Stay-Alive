@@ -41,6 +41,8 @@ class ApplicationManager extends DoctrineManager
             ->from($this->getClass(), 'a')
             ->innerJoin('a.user', 'u')
             ->where('a.competition = :competition')
+            ->orderBy('a.class')
+            ->addOrderBy('a.group')
             ->setParameter('competition', $competition)
             ->getQuery();
         return $query->execute();

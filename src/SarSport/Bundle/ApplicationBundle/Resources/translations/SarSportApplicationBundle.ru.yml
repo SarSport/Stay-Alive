@@ -3,14 +3,21 @@ application:
   phonenumber: Телефон
   competition: Соревнование
   additionalMaps: Доп. комплект карт
+  additionalMaps_short: Доп. к/к
   comment: Комментарий
-  player_fio: ФИО
+  player_firstname: Имя
+  player_lastname: Фамилия
   t-shirt: Футболка
+  t-shirt_short: Фут.
   city: Город
   sex: Пол
   group: Группа
   class: Класс
   birthday: Дата Рождения
+  birthday_short: Д.Р.
+  empty_list: На данный момент нет заявок на участие в соревнованиях
+  yes: да
+  no: нет
 
   header:
     list: Список участников
@@ -28,7 +35,7 @@ application:
     new_application:
       subject: Новая заявка в %competition%.
       message: |
-        %teamName% в составе %firstPlayerName% - %secondPlayerName% подали заявку на участие в соревновании.
+        %teamName% в составе %firstPlayerFirstName% - %secondPlayerFirstName% подали заявку на участие в соревновании.
 
         Подробную информацию о заявке можно получить: %url%
     update_application:
@@ -51,6 +58,7 @@ application:
     mw: МЖ/ЖЖ
     mr: ММВ
     mwr: МЖВ/ЖЖВ
+
   class_name:
     sport: СПОРТ
     tourism: ТУРИЗМ

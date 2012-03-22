@@ -1,0 +1,35 @@
+/**
+ * This file is part of the SarSportApplicationBundle package.
+ *
+ * (c) Dmitry Petrov aka fightmaster <old.fightmaster@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
+td.sarsport_application_class_1 {
+    color: #ff390d;
+}
+td.sarsport_application_class_2 {
+     color: #ff7f00;
+ }
+td.sarsport_application_group_1 {
+      color: rgba(14, 145, 8, 0.99);
+  }
+td.sarsport_application_group_3 {
+    color: rgba(15, 98, 10, 0.98);
+}
+td.sarsport_application_group_2 {
+    color: #2f99ba;
+}
+td.sarsport_application_group_4 {
+    color: #1c567f;
+}
+td.sarsport_application_boolean_1 {
+    color: rgba(14, 145, 8, 0.99);
+ }
+td.sarsport_application_boolean_ {
+    color: #ff390d;
+}
+
+

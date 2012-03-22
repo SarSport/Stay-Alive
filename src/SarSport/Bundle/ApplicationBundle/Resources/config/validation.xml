@@ -19,16 +19,30 @@
             </constraint>
         </property>
 
-        <property name="firstPlayerName">
+        <property name="firstPlayerFirstName">
             <constraint name="NotBlank">
                 <option name="message">application.form.player_fio.blank</option>
             </constraint>
             <constraint name="MinLength">
-                <option name="limit">5</option>
+                <option name="limit">2</option>
                 <option name="message">application.form.player_fio.short</option>
             </constraint>
             <constraint name="MaxLength">
-                <option name="limit">150</option>
+                <option name="limit">50</option>
+                <option name="message">application.form.player_fio.long</option>
+            </constraint>
+        </property>
+
+        <property name="firstPlayerLastName">
+            <constraint name="NotBlank">
+                <option name="message">application.form.player_fio.blank</option>
+            </constraint>
+            <constraint name="MinLength">
+                <option name="limit">2</option>
+                <option name="message">application.form.player_fio.short</option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">50</option>
                 <option name="message">application.form.player_fio.long</option>
             </constraint>
         </property>
@@ -47,13 +61,24 @@
             </constraint>
         </property>
 
-        <property name="secondPlayerName">
+        <property name="secondPlayerFirstName">
             <constraint name="MinLength">
-                <option name="limit">5</option>
+                <option name="limit">2</option>
                 <option name="message">application.form.player_fio.short</option>
             </constraint>
             <constraint name="MaxLength">
-                <option name="limit">150</option>
+                <option name="limit">50</option>
+                <option name="message">application.form.player_fio.long</option>
+            </constraint>
+        </property>
+
+        <property name="secondPlayerLastName">
+            <constraint name="MinLength">
+                <option name="limit">2</option>
+                <option name="message">application.form.player_fio.short</option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">50</option>
                 <option name="message">application.form.player_fio.long</option>
             </constraint>
         </property>

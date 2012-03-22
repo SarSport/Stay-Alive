@@ -31,7 +31,12 @@ class Application implements ApplicationInterface
     /**
      * @var string
      */
-    protected $firstPlayerName;
+    protected $firstPlayerFirstName;
+
+    /**
+     * @var string
+     */
+    protected $firstPlayerLastName;
 
     /**
      * @var string
@@ -41,7 +46,12 @@ class Application implements ApplicationInterface
     /**
      * @var string
      */
-    protected $secondPlayerName;
+    protected $secondPlayerFirstName;
+
+    /**
+     * @var string
+     */
+    protected $secondPlayerLastName;
 
     /**
      * @var string
@@ -170,9 +180,9 @@ class Application implements ApplicationInterface
      * @param string $firstPlayerName
      * @return Application
      */
-    public function setFirstPlayerName($firstPlayerName)
+    public function setFirstPlayerFirstName($firstPlayerName)
     {
-        $this->firstPlayerName = $firstPlayerName;
+        $this->firstPlayerFirstName = $firstPlayerName;
 
         return $this;
     }
@@ -182,9 +192,9 @@ class Application implements ApplicationInterface
      *
      * @return string
      */
-    public function getFirstPlayerName()
+    public function getFirstPlayerFirstName()
     {
-        return $this->firstPlayerName;
+        return $this->firstPlayerFirstName;
     }
 
     /**
@@ -226,9 +236,9 @@ class Application implements ApplicationInterface
      * @param string $secondPlayerName
      * @return Application
      */
-    public function setSecondPlayerName($secondPlayerName)
+    public function setSecondPlayerFirstName($secondPlayerName)
     {
-        $this->secondPlayerName = $secondPlayerName;
+        $this->secondPlayerFirstName = $secondPlayerName;
 
         return $this;
     }
@@ -238,9 +248,9 @@ class Application implements ApplicationInterface
      *
      * @return string
      */
-    public function getSecondPlayerName()
+    public function getSecondPlayerFirstName()
     {
-        return $this->secondPlayerName;
+        return $this->secondPlayerFirstName;
     }
 
     /**
@@ -510,5 +520,43 @@ class Application implements ApplicationInterface
     public function getClass()
     {
         return $this->class;
+    }
+
+    /**
+     * @param string $firstPlayerLastName
+     * @return Application
+     */
+    public function setFirstPlayerLastName($firstPlayerLastName)
+    {
+        $this->firstPlayerLastName = $firstPlayerLastName;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFirstPlayerLastName()
+    {
+        return $this->firstPlayerLastName;
+    }
+
+    /**
+     * @param string $secondPlayerLastName
+     * @return Application
+     */
+    public function setSecondPlayerLastName($secondPlayerLastName)
+    {
+        $this->secondPlayerLastName = $secondPlayerLastName;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSecondPlayerLastName()
+    {
+        return $this->secondPlayerLastName;
     }
 }

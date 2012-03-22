@@ -3,14 +3,21 @@ application:
   phonenumber: Phone
   competition: Competiton
   additionalMaps: Add. maps
+  additionalMaps_short: Add. maps
   comment: Comment
-  player_fio: Name
+  player_firstname: Firstname
+  player_lastname: Lastname
   t-shirt: T-shirt
+  t-shirt_short: T-s
   city: City
   sex: Sex
   group: Group
   class: Класс
   birthday: Birthday
+  birthday_short: B.D.
+  empty_list: There are currently no applications for participation in competitions
+  yes: yes
+  no: no
 
   header:
     list: List of participants
@@ -28,7 +35,7 @@ application:
     new_application:
       subject: A new application to the %competition%.
       message: |
-        %teamName% in the %firstPlayerName% - %secondPlayerName% applied to participate in the competition.
+        %teamName% in the %firstPlayerFirstName% - %secondPlayerFirstName% applied to participate in the competition.
 
         For more information on the application may be obtained: %url%
     update_application:

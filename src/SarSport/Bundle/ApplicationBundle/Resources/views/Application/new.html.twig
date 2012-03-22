@@ -3,10 +3,10 @@
 {% form_theme form 'SarSportApplicationBundle::form.html.twig' %}
 <h1>{% trans with {'%teamName%': entity.teamName} from 'SarSportApplicationBundle' %}application.header.new{% endtrans %}</h1>
 
-<form action="{{ path('application_create') }}" method="post" {{ form_enctype(form) }}>
+<form action="{{ path('application_create') }}" method="post" {{ form_enctype(form) }} class="form-inline form-horizontal">
     {{ form_widget(form) }}
     <p>
-        <button type="submit">{% trans from 'SarSportApplicationBundle' %}application.links.send_application{% endtrans %}</button>
+        <button type="submit" class="btn btn-primary">{% trans from 'SarSportApplicationBundle' %}application.links.send_application{% endtrans %}</button>
     </p>
 </form>
 {% endblock sarsport_application_content %}

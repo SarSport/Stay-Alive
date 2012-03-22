@@ -3,15 +3,31 @@
 {% block sarsport_application_content %}
 <h1>{% trans with {'%teamName%': entity.teamName} from 'SarSportApplicationBundle' %}application.header.show{% endtrans %}</h1>
 
-<table class="record_properties">
+<table class="table table-striped table-bordered table-condensed">
     <tbody>
     <tr>
         <th>{% trans from 'SarSportApplicationBundle' %}application.competition{% endtrans %}</th>
-        <td>{{ entity.competition }}</td>
+        <td>{{ sarsport_application_get_competition_name(entity.competition) | trans([], 'SarSportApplicationBundle') }}</td>
     </tr>
     <tr>
         <th>{% trans from 'SarSportApplicationBundle' %}application.teamName{% endtrans %}</th>
         <td>{{ entity.teamName }}</td>
+    </tr>
+    <tr>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.city{% endtrans %}</th>
+        <td>{{ entity.city }}</td>
+    </tr>
+    <tr>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.class{% endtrans %}</th>
+        <td class="sarsport_application_class_{{entity.class}}">{{ sarsport_application_get_class_name(entity.class) | trans([], 'SarSportApplicationBundle') }}</td>
+    </tr>
+    <tr>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.group{% endtrans %}</th>
+        <td class="sarsport_application_group_{{entity.group}}">{{ sarsport_application_get_group_name(entity.group) | trans([], 'SarSportApplicationBundle') }}</td>
+    </tr>
+    <tr>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.additionalMaps{% endtrans %}</th>
+        <td class="sarsport_application_boolean_{{entity.additionalMaps}}">{{ sarsport_application_get_boolean(entity.additionalMaps) | trans([], 'SarSportApplicationBundle') }}</td>
     </tr>
     {% if sarsport_application_is_owner(entity) %}
     <tr>
@@ -25,23 +41,27 @@
     {% endif %}
     <tr>
         <th>{% trans from 'SarSportApplicationBundle' %}application.player_fio{% endtrans %}</th>
-        <td>{{ entity.firstPlayerName }}</td>
+        <td>{{ entity.firstPlayerFirstName }} {{ entity.firstPlayerLastName }}</td>
+    </tr>
+    <tr>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.birthday{% endtrans %}</th>
+        <td>{% if entity.firstPlayerBirthday %}{{ entity.firstPlayerBirthday.format('d.m.Y') }}{% endif %}</td>
     </tr>
     <tr>
         <th>{% trans from 'SarSportApplicationBundle' %}application.t-shirt{% endtrans %}</th>
-        <td>{{ entity.firstPlayerTShirt }}</td>
+        <td class="sarsport_application_boolean_{{entity.firstPlayerTShirt}}">{{ sarsport_application_get_boolean(entity.firstPlayerTShirt) | trans([], 'SarSportApplicationBundle') }}</td>
     </tr>
     <tr>
         <th>{% trans from 'SarSportApplicationBundle' %}application.player_fio{% endtrans %}</th>
-        <td>{{ entity.secondPlayerName }}</td>
+        <td>{{ entity.secondPlayerFirstName }} {{ entity.secondPlayerLastName }}</td>
+    </tr>
+    <tr>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.birthday{% endtrans %}</th>
+        <td>{% if entity.secondPlayerBirthday %}{{ entity.secondPlayerBirthday.format('d.m.Y') }}{% endif %}</td>
     </tr>
     <tr>
         <th>{% trans from 'SarSportApplicationBundle' %}application.t-shirt{% endtrans %}</th>
-        <td>{{ entity.secondPlayerTShirt }}</td>
-    </tr>
-    <tr>
-        <th>{% trans from 'SarSportApplicationBundle' %}application.additionalMaps{% endtrans %}</th>
-        <td>{{ entity.additionalMaps }}</td>
+        <td class="sarsport_application_boolean_{{entity.secondPlayerTShirt}}">{{ sarsport_application_get_boolean(entity.secondPlayerTShirt) | trans([], 'SarSportApplicationBundle') }}</td>
     </tr>
     </tbody>
 </table>

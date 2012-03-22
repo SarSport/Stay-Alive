@@ -229,7 +229,8 @@ class ApplicationController extends Controller
         $user = $securityContext->getToken()->getUser();
         if ($user instanceof User) {
             $application->setFirstPlayerBirthday($user->getBirthday());
-            $application->setFirstPlayerName(trim($user->getLastName() . ' ' . $user->getFirstName() . ' ' . $user->getSecondName()));
+            $application->setFirstPlayerFirstName($user->getFirstName());
+            $application->setFirstPlayerLastName($user->getLastName());
             $application->setFirstPlayerSex($user->getSex());
         }
     }

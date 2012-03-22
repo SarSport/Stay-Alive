@@ -44,12 +44,12 @@ interface ApplicationInterface
      * @param string $firstPlayerName
      * @return ApplicationInterface
      */
-    public function setFirstPlayerName($firstPlayerName);
+    public function setFirstPlayerFirstName($firstPlayerName);
 
     /**
      * @return string
      */
-    public function getFirstPlayerName();
+    public function getFirstPlayerFirstName();
 
     /**
      * @param string $phonenubmer
@@ -71,12 +71,12 @@ interface ApplicationInterface
      * @param string $secondPlayerName
      * @return ApplicationInterface
      */
-    public function setSecondPlayerName($secondPlayerName);
+    public function setSecondPlayerFirstName($secondPlayerName);
 
     /**
      * @return string
      */
-    public function getSecondPlayerName();
+    public function getSecondPlayerFirstName();
 
     /**
      * @param string $teamName
@@ -230,4 +230,26 @@ interface ApplicationInterface
      * @return string
      */
     public function getClass();
+
+    /**
+     * @param string $firstPlayerLastName
+     * @return ApplicationInterface
+     */
+    public function setFirstPlayerLastName($firstPlayerLastName);
+
+    /**
+     * @return string
+     */
+    public function getFirstPlayerLastName();
+
+    /**
+     * @param string $secondPlayerLastName
+     * @return ApplicationInterface
+     */
+    public function setSecondPlayerLastName($secondPlayerLastName);
+
+    /**
+     * @return string
+     */
+    public function getSecondPlayerLastName();
 }

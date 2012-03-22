@@ -1,16 +1,16 @@
 {% block subject %}
 {% autoescape false %}
 {{ 'application.email.new_application.subject'|trans({'%teamName%': application.teamName, '%url%': url,
-                                                      '%firstPlayerName%': application.firstPlayerName,
-                                                      '%secondPlayerName%': application.secondPlayerName,
+                                                      '%firstPlayerFirstName%': application.firstPlayerFirstName,
+                                                      '%secondPlayerFirstName%': application.secondPlayerFirstName,
                                                       '%competition%': sarsport_application_get_competition_name(application.competition) |trans([], 'SarSportApplicationBundle')}, 'SarSportApplicationBundle') }}
 {% endautoescape %}
 {% endblock %}
 {% block body_text %}
 {% autoescape false %}
 {{ 'application.email.new_application.message'|trans({'%teamName%': application.teamName, '%url%': url,
-                                                      '%firstPlayerName%': application.firstPlayerName,
-                                                      '%secondPlayerName%': application.secondPlayerName,
+                                                      '%firstPlayerFirstName%': application.firstPlayerFirstName,
+                                                      '%secondPlayerFirstName%': application.secondPlayerFirstName,
                                                       '%competition%': sarsport_application_get_competition_name(application.competition) |trans([], 'SarSportApplicationBundle')}, 'SarSportApplicationBundle') }}
 {% endautoescape %}
 {% endblock %}
