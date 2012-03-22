@@ -12,7 +12,7 @@
 }
 
 #main_column{
-    border-right:1px solid #999;
+    /*border-right:1px solid #999;*/
     padding-right:20px;
 }
 
@@ -44,4 +44,9 @@
 
 .due_date {
     font-size:10px;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #005580;
+    margin-bottom: 5px;
 }

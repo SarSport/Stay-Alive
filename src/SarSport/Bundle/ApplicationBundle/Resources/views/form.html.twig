@@ -1,12 +1,34 @@
+{% block field_row %}
+{% spaceless %}
+<div class="control-group{% if errors|length > 0 %} error{% endif %}">
+    {{ form_label(form) }}
+    <div class="controls">
+        {{ form_widget(form) }}
+        {{ form_errors(form) }}
+    </div>
+</div>
+{% endspaceless %}
+{% endblock field_row %}
+
+{% block field_errors %}
+{% spaceless %}
+{% if errors|length > 0 %}
+    {% for error in errors %}
+    <div class="help-inline">{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}</div>
+    {% endfor %}
+{% endif %}
+{% endspaceless %}
+{% endblock field_errors %}
+
 {% block field_label %}
 {% spaceless %}
-    <label for="{{ id }}">{{ label|trans([], 'SarSportApplicationBundle') }}</label>
+    <label for="{{ id }}" class="control-label">{{ label|trans([], 'SarSportApplicationBundle') }}</label>
 {% endspaceless %}
 {% endblock field_label %}
 
 {% block form_label %}
 {% spaceless %}
-    <label for="{{ id }}">{{ label|trans([], 'SarSportApplicationBundle') }}</label>
+    <label for="{{ id }}" class="control-label">{{ label|trans([], 'SarSportApplicationBundle') }}</label>
 {% endspaceless %}
 {% endblock form_label %}
 
@@ -25,3 +47,31 @@
     {% endfor %}
 {% endspaceless %}
 {% endblock widget_choice_options %}
+
+{% block choice_widget %}
+{% spaceless %}
+{% if expanded %}
+<div {{ block('widget_container_attributes') }}>
+    {% for child in form %}
+    {{ form_widget(child) }}
+    {{ form_label(child) }}
+    {% endfor %}
+</div>
+{% else %}
+<select class="span2" {{ block('widget_attributes') }}{% if multiple %} multiple="multiple"{% endif %}>
+    {% if empty_value is not none %}
+    <option value="">{{ empty_value|trans }}</option>
+    {% endif %}
+    {% if preferred_choices|length > 0 %}
+    {% set options = preferred_choices %}
+    {{ block('widget_choice_options') }}
+    {% if choices|length > 0 and separator is not none %}
+    <option disabled="disabled">{{ separator }}</option>
+    {% endif %}
+    {% endif %}
+    {% set options = choices %}
+    {{ block('widget_choice_options') }}
+</select>
+{% endif %}
+{% endspaceless %}
+{% endblock choice_widget %}

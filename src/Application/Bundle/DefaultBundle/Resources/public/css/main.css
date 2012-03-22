@@ -18,7 +18,7 @@
 
 .page-sidebar-left {
     padding-top:10px;
-    border-right:1px solid #999;
+    /*border-right:1px solid #999;*/
 }
 
 .page-sidebar-right {
@@ -46,8 +46,28 @@ ul.navbar {
     background-repeat:no-repeat;
 }
 
-.navbar_lecture {
-    background-image:url(../images/navbar_icons/lecture.png);
+.navbar_members {
+    background-image:url(../images/navbar_icons/members.png);
+    background-repeat:no-repeat;
+}
+
+.navbar_join {
+    background-image:url(../images/navbar_icons/join.png);
+    background-repeat:no-repeat;
+}
+
+.navbar_video {
+    background-image:url(../images/navbar_icons/video.png);
+    background-repeat:no-repeat;
+}
+
+.navbar_photo {
+    background-image:url(../images/navbar_icons/photo.png);
+    background-repeat:no-repeat;
+}
+
+.navbar_article {
+    background-image:url(../images/navbar_icons/article.png);
     background-repeat:no-repeat;
 }
 
@@ -56,8 +76,8 @@ ul.navbar {
     background-repeat:no-repeat;
 }
 
-.navbar_assignment {
-    background-image:url(../images/navbar_icons/assignment.png);
+.navbar_information {
+    background-image:url(../images/navbar_icons/information.png);
     background-repeat:no-repeat;
 }
 
@@ -100,10 +120,12 @@ ul.navbar {
   padding: 2px 4px;
 }
 
-.nav a {
+.nav a, .nav span{
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: normal;
 }
+.navbar .nav>li>span{display:block;float:none;padding:10px 10px 11px;line-height:19px;color:#999999;text-decoration:none;text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);}
+
 

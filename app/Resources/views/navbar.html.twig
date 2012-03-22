@@ -4,10 +4,20 @@
 </div>
 {% endif %}
 <ul class="navbar">
-    <li><a href="#"><p class="navbar_item navbar_home">Home</p></a></li>
-    <li><a href="#"><p class="navbar_item navbar_quiz">Quizzes</p></a></li>
-    <li><a href="#"><p class="navbar_item navbar_assignment">Questions</p></a></li>
-    <li><a href="#"><p class="navbar_item navbar_lecture">Video</p></a></li>
-    <li><a href="#"><p class="navbar_item navbar_forum">Forums</p></a></li>
-    <li><a href="#"><p class="navbar_item navbar_wiki">Wiki</p></a></li>
+    <li><a href="{{ path('DefaultBundle_homepage') }}"><p class="navbar_item navbar_home">{{ 'stay-alive.menu-left.home' | trans }}</p></a></li>
+
+    <li><h3>{{ 'stay-alive.menu-left.stay-alive' | trans }}</h3></li>
+    <li><a href="#"><p class="navbar_item navbar_information">{{ 'stay-alive.menu-left.information' | trans }}</p></a></li>
+    <li><a href="{{ path('application_new') }}"><p class="navbar_item navbar_join">{{ 'stay-alive.menu-left.take_part' | trans }}</p></a></li>
+    <li><a href="{{ path('application_by_competition', {'competition': 'stay-alive'}) }}"><p class="navbar_item navbar_members">{{ 'stay-alive.menu-left.players' | trans }}</p></a></li>
+
+    <li><h3>{{ 'stay-alive.menu-left.giant' | trans }}</h3></li>
+    <li><a href="#"><p class="navbar_item navbar_information">{{ 'stay-alive.menu-left.information' | trans }}</p></a></li>
+    <li><a href="{{ path('application_new') }}"><p class="navbar_item navbar_join">{{ 'stay-alive.menu-left.take_part' | trans }}</p></a></li>
+    <li><a href="{{ path('application_by_competition', {'competition': 'giant'}) }}"><p class="navbar_item navbar_members">{{ 'stay-alive.menu-left.players' | trans }}</p></a></li>
+
+    <li><h3>{{ 'stay-alive.menu-left.archive' | trans }}</h3></li>
+    <li><a href="#"><p class="navbar_item navbar_article">{{ 'stay-alive.menu-left.article' | trans }}</p></a></li>
+    <li><a href="#"><p class="navbar_item navbar_photo">{{ 'stay-alive.menu-left.photo' | trans }}</p></a></li>
+    <li><a href="#"><p class="navbar_item navbar_video">{{ 'stay-alive.menu-left.video' | trans }}</p></a></li>
 </ul>

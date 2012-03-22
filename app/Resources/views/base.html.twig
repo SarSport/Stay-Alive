@@ -8,15 +8,15 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('bundles/default/css/main.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bundles/default/css/stay-alive.css') }}">
         {% block stylesheets %}{% endblock %}
-        {% block favicon %}<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />{% endblock %}
+        {% block favicon %}<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon" />{% endblock %}
         <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
         <script src="{{ asset('bundles/default/js/jquery-v1.7.1.min.js') }}"></script>
-        <script src="{{ asset('bundles/default/js/json.js') }}"></script>
+        {#<script src="{{ asset('bundles/default/js/json.js') }}"></script>
         <script src="{{ asset('bundles/default/js/hc_fix.js') }}"></script>
 
         <script src="{{ asset('bundles/default/js/bootstrap/bootstrap-modal.js') }}"></script>
         <script src="{{ asset('bundles/default/js/modal_focus.js') }}"></script>
-        <script src="{{ asset('bundles/default/js/bind_modal_focus.js') }}"></script>
+        <script src="{{ asset('bundles/default/js/bind_modal_focus.js') }}"></script>#}
     </head>
     <body>
         {% block body %}
@@ -34,6 +34,7 @@
                                     {% endblock %}
                                 </div>
                                 {% endblock %}
+                                {% block centerBar %}
                                 <div class="span7 page-content" id="page-content">
                                     <div id="main_column">
                                         {% block flashMessages %}
@@ -55,6 +56,8 @@
                                         {% block content %}{% endblock %}
                                     </div>
                                 </div>
+                                {% endblock %}
+                                {% block sidebar_right %}
                                 <div class="span3 page-sidebar-right">
                                     <div class="right_category">
                                         <h4>Header</h4>
@@ -124,6 +127,7 @@
                                         </ul>
                                     </div>
                                 </div>
+                                {% endblock %}
                             </div>
                         </div>
                     </div>

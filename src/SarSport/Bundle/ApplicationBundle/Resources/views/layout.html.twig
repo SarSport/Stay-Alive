@@ -1,4 +1,7 @@
 {% extends '::base.html.twig' %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{ asset('bundles/sarsportapplication/css/application.css') }}">
+{% endblock %}
 {% block flashMessages %}
     {% for key, message in app.session.getFlashes() %}
     <div class="{{ key }}">
