@@ -5,7 +5,7 @@ stay-alive:
         name: Аверьянов Алексей
         text: дизайнер гонки
     menu-top:
-        information: Информация
+        information: О проекте
         contacts: Контакты
     menu-left:
       home: Главная

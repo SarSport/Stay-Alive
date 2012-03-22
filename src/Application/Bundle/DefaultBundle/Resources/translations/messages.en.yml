@@ -5,8 +5,8 @@ stay-alive:
         name: Averjanov Alexey
         text: designer of the race
     menu-top:
-        information: Information
-        contacts: Contacts
+        information: About project
+        contacts: Contacts As
     menu-left:
       home: Home
       take_part: Take part
