@@ -98,13 +98,23 @@
             <constraint name="NotBlank">
                 <option name="message">application.form.birthday.blank</option>
             </constraint>
-            <constraint name="Date">
+            <constraint name="MinLength">
+                <option name="limit">4</option>
+                <option name="message">application.form.birthday.invalid</option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">4</option>
                 <option name="message">application.form.birthday.invalid</option>
             </constraint>
         </property>
 
         <property name="secondPlayerBirthday">
-            <constraint name="Date">
+            <constraint name="MinLength">
+                <option name="limit">4</option>
+                <option name="message">application.form.birthday.invalid</option>
+            </constraint>
+            <constraint name="MaxLength">
+                <option name="limit">4</option>
                 <option name="message">application.form.birthday.invalid</option>
             </constraint>
         </property>

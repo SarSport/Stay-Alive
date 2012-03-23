@@ -26,8 +26,8 @@
         <field name="status" type="integer" column="status"/>
         <field name="createdAt" type="datetime" column="created_at"/>
         <field name="updatedAt" type="datetime" column="updated_at" nullable="true"/>
-        <field name="firstPlayerBirthday" type="date" column="first_player_birthday"/>
-        <field name="secondPlayerBirthday" type="date" column="second_player_birthday" nullable="true"/>
+        <field name="firstPlayerBirthday" type="integer" column="first_player_birthday"/>
+        <field name="secondPlayerBirthday" type="integer" column="second_player_birthday" nullable="true"/>
         <field name="firstPlayerSex" type="integer" column="first_player_sex"/>
         <field name="secondPlayerSex" type="integer" column="second_player_sex" nullable="true"/>
 

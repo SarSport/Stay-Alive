@@ -156,17 +156,18 @@ interface ApplicationInterface
     public function getUpdatedAt();
 
     /**
-     * @param DateTime $firstPlayerBirthday
+     * @param integer $firstPlayerBirthday
      * @return ApplicationInterface
      */
-    public function setFirstPlayerBirthday(DateTime $firstPlayerBirthday);
+    public function setFirstPlayerBirthday($firstPlayerBirthday);
 
     /**
-     * @return DateTime
+     * @return integer
      */
     public function getFirstPlayerBirthday();
 
     /**
+     * @param integer $firstPlayerSex
      * @return ApplicationInterface
      */
     public function setFirstPlayerSex($firstPlayerSex);
@@ -188,13 +189,13 @@ interface ApplicationInterface
     public function getGroup();
 
     /**
-     * @param DateTime|null $secondPlayerBirthday
+     * @param integer|null $secondPlayerBirthday
      * @return ApplicationInterface
      */
     public function setSecondPlayerBirthday($secondPlayerBirthday);
 
     /**
-     * @return DateTime|null
+     * @return integer|null
      */
     public function getSecondPlayerBirthday();
 

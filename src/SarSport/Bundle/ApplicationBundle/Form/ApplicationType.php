@@ -17,6 +17,7 @@ use SarSport\Bundle\ApplicationBundle\Form\Extension\SexType;
 use SarSport\Bundle\ApplicationBundle\Form\Extension\ClassType;
 use SarSport\Bundle\ApplicationBundle\Form\Extension\CompetitionType;
 use SarSport\Bundle\ApplicationBundle\Form\Extension\GroupType;
+use SarSport\Bundle\ApplicationBundle\Form\Extension\YearType;
 
 class ApplicationType extends AbstractType
 {
@@ -33,12 +34,12 @@ class ApplicationType extends AbstractType
             ->add('additionalMaps', null, array('label' => 'application.additionalMaps'))
             ->add('firstPlayerFirstName', null, array('label' => 'application.player_firstname'))
             ->add('firstPlayerLastName', null, array('label' => 'application.player_lastname'))
-            ->add('firstPlayerBirthday', 'birthday', array('label' => 'application.birthday'))
+            ->add('firstPlayerBirthday', new YearType(), array('label' => 'application.birthday'))
             ->add('firstPlayerSex', new SexType(), array('label'=> 'application.sex'))
             ->add('firstPlayerTShirt', null, array('label' => 'application.t-shirt'))
             ->add('secondPlayerFirstName', null, array('label' => 'application.player_firstname'))
             ->add('secondPlayerLastName', null, array('label' => 'application.player_lastname'))
-            ->add('secondPlayerBirthday', 'birthday', array('label' => 'application.birthday'))
+            ->add('secondPlayerBirthday', new YearType(), array('label' => 'application.birthday'))
             ->add('secondPlayerSex', new SexType(), array('label'=> 'application.sex'))
             ->add('secondPlayerTShirt', null,  array('label' => 'application.t-shirt'))
         ;

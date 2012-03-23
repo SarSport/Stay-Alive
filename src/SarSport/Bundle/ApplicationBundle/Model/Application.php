@@ -94,12 +94,12 @@ class Application implements ApplicationInterface
     protected $updatedAt;
 
     /**
-     * @var DateTime
+     * @var integer
      */
     protected $firstPlayerBirthday;
 
     /**
-     * @var DateTime|null
+     * @var integer|null
      */
     protected $secondPlayerBirthday;
 
@@ -391,10 +391,10 @@ class Application implements ApplicationInterface
     }
 
     /**
-     * @param DateTime $firstPlayerBirthday
+     * @param integer $firstPlayerBirthday
      * @return Application
      */
-    public function setFirstPlayerBirthday(DateTime $firstPlayerBirthday)
+    public function setFirstPlayerBirthday($firstPlayerBirthday)
     {
         $this->firstPlayerBirthday = $firstPlayerBirthday;
 
@@ -402,7 +402,7 @@ class Application implements ApplicationInterface
     }
 
     /**
-     * @return DateTime
+     * @return integer
      */
     public function getFirstPlayerBirthday()
     {
@@ -410,6 +410,7 @@ class Application implements ApplicationInterface
     }
 
     /**
+     * @param integer $firstPlayerSex
      * @return Application
      */
     public function setFirstPlayerSex($firstPlayerSex)
@@ -447,7 +448,7 @@ class Application implements ApplicationInterface
     }
 
     /**
-     * @param DateTime|null $secondPlayerBirthday
+     * @param integer|null $secondPlayerBirthday
      * @return Application
      */
     public function setSecondPlayerBirthday($secondPlayerBirthday)
@@ -458,7 +459,7 @@ class Application implements ApplicationInterface
     }
 
     /**
-     * @return DateTime|null
+     * @return integer|null
      */
     public function getSecondPlayerBirthday()
     {

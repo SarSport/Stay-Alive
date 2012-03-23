@@ -45,7 +45,7 @@
     </tr>
     <tr>
         <th>{% trans from 'SarSportApplicationBundle' %}application.birthday{% endtrans %}</th>
-        <td>{% if entity.firstPlayerBirthday %}{{ entity.firstPlayerBirthday.format('d.m.Y') }}{% endif %}</td>
+        <td>{{ entity.firstPlayerBirthday }}</td>
     </tr>
     <tr>
         <th>{% trans from 'SarSportApplicationBundle' %}application.t-shirt{% endtrans %}</th>
@@ -57,7 +57,7 @@
     </tr>
     <tr>
         <th>{% trans from 'SarSportApplicationBundle' %}application.birthday{% endtrans %}</th>
-        <td>{% if entity.secondPlayerBirthday %}{{ entity.secondPlayerBirthday.format('d.m.Y') }}{% endif %}</td>
+        <td>{{ entity.secondPlayerBirthday }}</td>
     </tr>
     <tr>
         <th>{% trans from 'SarSportApplicationBundle' %}application.t-shirt{% endtrans %}</th>

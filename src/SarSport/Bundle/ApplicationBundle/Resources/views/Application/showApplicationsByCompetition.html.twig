@@ -51,9 +51,9 @@
                 <td>{{ entity.comment }}</td>
                 {% endif %}
                 <td>{{ entity.firstPlayerFirstName }} {{ entity.firstPlayerLastName }}</td>
-                <td>{% if entity.firstPlayerBirthday %}{{ entity.firstPlayerBirthday.format('Y') }}{% endif %}</td>
+                <td>{{ entity.firstPlayerBirthday }}</td>
                 <td>{{ entity.secondPlayerFirstName }} {{ entity.secondPlayerLastName }}</td>
-                <td>{% if entity.secondPlayerBirthday %}{{ entity.secondPlayerBirthday.format('Y') }}{% endif %}</td>
+                <td>{{ entity.secondPlayerBirthday}}</td>
                 <td class="sarsport_application_boolean_{{entity.additionalMaps}}">{{ sarsport_application_get_boolean(entity.additionalMaps) | trans([], 'SarSportApplicationBundle') }}</td>
                 <td class="sarsport_application_boolean_{{entity.firstPlayerTShirt}}">{{ sarsport_application_get_boolean(entity.firstPlayerTShirt) | trans([], 'SarSportApplicationBundle') }}</td>
                 <td class="sarsport_application_boolean_{{entity.secondPlayerTShirt}}">{{ sarsport_application_get_boolean(entity.secondPlayerTShirt) | trans([], 'SarSportApplicationBundle') }}</td>
