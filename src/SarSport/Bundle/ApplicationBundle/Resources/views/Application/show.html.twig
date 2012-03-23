@@ -1,4 +1,5 @@
 {% extends "SarSportApplicationBundle::layout.html.twig" %}
+{% block sub_title %}. Информация о команде{% endblock %}
 
 {% block sarsport_application_content %}
 <h1>{% trans with {'%teamName%': entity.teamName} from 'SarSportApplicationBundle' %}application.header.show{% endtrans %}</h1>

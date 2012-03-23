@@ -1,4 +1,5 @@
 {% extends "SarSportApplicationBundle::layout.html.twig" %}
+{% block sub_title %}. Создание заявки{% endblock %}
 {% block sarsport_application_content %}
 {% form_theme form 'SarSportApplicationBundle::form.html.twig' %}
 <h1>{% trans with {'%teamName%': entity.teamName} from 'SarSportApplicationBundle' %}application.header.new{% endtrans %}</h1>
