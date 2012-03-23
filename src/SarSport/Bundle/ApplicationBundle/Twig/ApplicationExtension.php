@@ -130,13 +130,16 @@ class ApplicationExtension extends Twig_Extension
      * @param $competition
      * @return string
      */
-    public function getBoolean($group)
+    public function getBoolean($boolean)
     {
-        switch ($group) {
+        switch ($boolean) {
+            case null:
+            default:
+                return '';
+                break;
             case 1:
                 return 'application.yes';
                 break;
-            default:
             case 0:
                 return 'application.no';
                 break;
