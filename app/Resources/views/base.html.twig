@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="риключенческая гонка, остаться в живых, экстремальная гонка">
         <title>{% block title %} {{ 'brand.name'|trans }} {% endblock %}</title>
         <link rel="stylesheet" type="text/css" href="{{ asset('bundles/default/css/bootstrap.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('bundles/default/css/bootstrap-responsive.min.css') }}">
@@ -24,7 +25,7 @@
             {% block topbanner %}{% include '::topbanner.html.twig' %}{% endblock %}
             {% block container %}
                 <div class="container-fluid">
-                    <div class="row-fluid">
+                    <div class="row-fluid" id="main-container">
                         <div class="span12">
                             <div class="row-fluid">
                                 {% block sidebar %}
@@ -72,8 +73,8 @@
                                                         {{ 'stay-alive.menu-right.sportmir.address' | trans }}<br />
                                                         {{ 'stay-alive.menu-right.sportmir.phone' | trans }}
                                                     </div>
-                                                </div
-                                            ></li>
+                                                </div>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>

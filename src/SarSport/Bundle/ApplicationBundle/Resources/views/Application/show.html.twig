@@ -38,6 +38,10 @@
         <th>{% trans from 'SarSportApplicationBundle' %}application.comment{% endtrans %}</th>
         <td>{{ entity.comment }}</td>
     </tr>
+    <tr>
+        <th>{% trans from 'SarSportApplicationBundle' %}application.payment{% endtrans %}</th>
+        <td>{{ sarsport_application_get_boolean(entity.status) | trans([], 'SarSportApplicationBundle') }}</td>
+    </tr>
     {% endif %}
     <tr>
         <th>{% trans from 'SarSportApplicationBundle' %}application.player_fio{% endtrans %}</th>

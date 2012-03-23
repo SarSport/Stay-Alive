@@ -5,7 +5,7 @@ DefaultBundle_static_page:
   pattern:  page/{slug}
   defaults: { _controller: DefaultBundle:Page:index }
   requirements:
-    slug:  about|contacts|reglament-stay-alive|reglament-giant
+    slug:  about|contacts|reglament-stay-alive|reglament-giant|information-stay-alive|faq-stay-alive
 DefaultBundle_payment_response:
   pattern:  payment/{slug}
   defaults: { _controller: DefaultBundle:Page:index }

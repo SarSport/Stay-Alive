@@ -1,5 +1,5 @@
 brand:
-    name: Stay Alive
+    name: STAY ALIVE
 stay-alive:
     designer:
         name: Averjanov Alexey
@@ -20,6 +20,7 @@ stay-alive:
       photo: Photo
       article: Articles
       pay: Pay for part
+      faq: FAQ
       ovg_old: Stay Alive 2011
     menu-right:
       links: Links

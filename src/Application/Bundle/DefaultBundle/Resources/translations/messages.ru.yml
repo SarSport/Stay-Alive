@@ -1,5 +1,5 @@
 brand:
-    name: Остаться в Живых
+    name: ОСТАТЬСЯ в ЖИВЫХ
 stay-alive:
     designer:
         name: Аверьянов Алексей
@@ -20,6 +20,7 @@ stay-alive:
       photo: Фото
       article: Статьи
       pay: Оплатить участие
+      faq: FAQ
       ovg_old: Остатья в Живых 2011
     menu-right:
       links: Ссылки
