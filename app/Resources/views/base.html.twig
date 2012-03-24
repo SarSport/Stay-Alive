@@ -75,6 +75,12 @@
                                                     </div>
                                                 </div>
                                             </li>
+                                            <li>
+                                                <div class="thumbnail span2" style="margin-top: 5px;">
+                                                <a class="thumbnail" href='http://sarbike.ru' target="_blank">
+                                                    <img src='http://sarbike.ru/images/img1.gif' border='0' width='88' height='31' alt='Sarbike.ru' title='Все о горных велосипедах' />
+                                                </a></div>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -87,5 +93,6 @@
         {% endblock %}
         {% block javascripts %}{% endblock %}
         {% block cloudim %}{% include '::cloudim.html.twig' %}{% endblock %}
+        {% include '::counters.html.twig' %}
     </body>
 </html>
