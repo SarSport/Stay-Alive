@@ -41,7 +41,7 @@
     </tr>
     <tr>
         <th>{% trans from 'SarSportApplicationBundle' %}application.payment{% endtrans %}</th>
-        <td>{{ sarsport_application_get_boolean(entity.status) | trans([], 'SarSportApplicationBundle') }}</td>
+        <td class="sarsport_application_boolean_{{entity.status}}">{{ sarsport_application_get_boolean(entity.status) | trans([], 'SarSportApplicationBundle') }}</td>
     </tr>
     {% endif %}
     <tr>
