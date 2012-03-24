@@ -30,7 +30,7 @@ class ApplicationType extends AbstractType
             ->add('class', new ClassType(), array('label' => 'application.class'))
             ->add('group', new GroupType(), array('label' => 'application.group'))
             ->add('city', null, array('label' => 'application.city'))
-            ->add('comment', 'textarea', array('label' => 'application.comment'))
+            ->add('comment', null, array('label' => 'application.comment'))
             ->add('additionalMaps', null, array('label' => 'application.additionalMaps'))
             ->add('firstPlayerFirstName', null, array('label' => 'application.player_firstname'))
             ->add('firstPlayerLastName', null, array('label' => 'application.player_lastname'))
