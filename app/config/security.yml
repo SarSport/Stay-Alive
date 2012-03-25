@@ -11,10 +11,10 @@ security:
         "FOS\UserBundle\Model\UserInterface": sha512
 
     firewalls:
-        wsse_secured:
-            pattern:   ^/api/.*
+        #wsse_secured:
+        #    pattern:   ^/api/.*
             #todo insert env variable
-            wsse:      { nonce_dir: "%kernel.root_dir%/cache/wsse/", lifetime: 300 }
+        #    wsse:      { nonce_dir: "%kernel.root_dir%/cache/wsse/", lifetime: 300 }
         main:
             pattern: ^/
             form_login:
@@ -39,7 +39,7 @@ security:
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
 
-    factories:
-        - "%kernel.root_dir%/../vendor/bundles/Escape/WSSEAuthenticationBundle/Resources/config/security_factories.yml"
+    #factories:
+    #    - "%kernel.root_dir%/../vendor/bundles/Escape/WSSEAuthenticationBundle/Resources/config/security_factories.yml"
     acl:
         connection: default

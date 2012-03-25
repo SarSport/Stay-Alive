@@ -22,11 +22,8 @@ class AppKernel extends Kernel
             new Application\Bundle\DefaultBundle\DefaultBundle(),
             new SarSport\Bundle\UserBundle\SarSportUserBundle(),
             new SarSport\Bundle\RestUserBundle\SarSportRestUserBundle(),
-            new FOS\RestBundle\FOSRestBundle(),
-            new FOS\CommentBundle\FOSCommentBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new JMS\SerializerBundle\JMSSerializerBundle($this),
-            new Escape\WSSEAuthenticationBundle\EscapeWSSEAuthenticationBundle(),
+            /*new Escape\WSSEAuthenticationBundle\EscapeWSSEAuthenticationBundle(),*/
             new SarSport\Bundle\ApplicationBundle\SarSportApplicationBundle(),
             new Stfalcon\Bundle\PaymentBundle\StfalconPaymentBundle()
         );

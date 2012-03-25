@@ -61,30 +61,13 @@
     target=/bundles/Symfony/Bundle/AsseticBundle
     version=v1.0.1
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-[JMSSerializerBundle]
-    git=git://github.com/schmittjoh/JMSSerializerBundle.git
-    target=bundles/JMS/SerializerBundle
-
 [FOSUserBundle]
     git=git://github.com/FriendsOfSymfony/FOSUserBundle.git
     target=bundles/FOS/UserBundle
 
-[FOSRest]
-    git=git://github.com/FriendsOfSymfony/FOSRest.git
-    target=fos/FOS/Rest
-
-[FOSRestBundle]
-    git=git://github.com/FriendsOfSymfony/FOSRestBundle.git
-    target=bundles/FOS/RestBundle
-    version=79a75c876f7eaa7f8eab0ee33e7c2cb79b254fe0
-
-[EscapeWSSEAuthenticationBundle]
-    git=https://github.com/escapestudios/EscapeWSSEAuthenticationBundle.git
-    target=bundles/Escape/WSSEAuthenticationBundle
-
-[FOSCommentBundle]
-    git=https://github.com/FriendsOfSymfony/FOSCommentBundle.git
-    target=bundles/FOS/CommentBundle
+;[EscapeWSSEAuthenticationBundle]
+;    git=https://github.com/escapestudios/EscapeWSSEAuthenticationBundle.git
+;    target=bundles/Escape/WSSEAuthenticationBundle
 
 [dao]
      git=https://github.com/fightmaster/dao.git

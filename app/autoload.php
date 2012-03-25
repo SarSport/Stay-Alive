@@ -15,7 +15,7 @@ $loader->registerNamespaces(array(
     'Assetic'          => __DIR__.'/../vendor/assetic/src',
     'Metadata'         => __DIR__.'/../vendor/metadata/src',
     'FOS'              => array(__DIR__.'/../vendor/bundles', __DIR__.'/../vendor/fos'),
-    'Escape'           => __DIR__.'/../vendor/bundles',
+    //'Escape'           => __DIR__.'/../vendor/bundles',
     'Fightmaster'      => array(__DIR__.'/../vendor/dao/src', __DIR__.'/../vendor/bundles'),
     'Stfalcon'         => __DIR__.'/../vendor/bundles'
 ));
