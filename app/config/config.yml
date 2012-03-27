@@ -16,7 +16,7 @@ framework:
         default_locale: %locale%
         auto_start:     true
 sensio_framework_extra:
-    view:           { annotations: false }
+    view:           { annotations: true }
 
 # Twig Configuration
 twig:
