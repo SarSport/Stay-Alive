@@ -14,13 +14,19 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="sarsport_application.application_service.class">SarSport\Bundle\ApplicationBundle\Service\ApplicationService</parameter>
+        <parameter key="sarsport_application.service.application.class">SarSport\Bundle\ApplicationBundle\Service\ApplicationService</parameter>
+        <parameter key="sarsport_application.service.excel_writer.class">SarSport\Bundle\ApplicationBundle\Service\ExcelWriter</parameter>
     </parameters>
 
     <services>
-        <service id="sarsport_application.application_service" class="%sarsport_application.application_service.class%">
+        <service id="sarsport_application.service.application" class="%sarsport_application.service.application.class%">
             <argument type="service" id="event_dispatcher" />
             <argument type="service" id="sarsport_application.application_manager" />
+        </service>
+
+        <service id="sarsport_application.service.excel_writer" class="%sarsport_application.service.excel_writer.class%">
+            <argument type="service" id="sarsport_application.twig.application_extension" />
+            <argument type="service" id="translator" />
         </service>
     </services>
 </container>

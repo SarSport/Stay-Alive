@@ -7,6 +7,10 @@
         <default key="_controller">SarSportApplicationBundle:Application:showApplicationsByCompetition</default>
         <requirement key="competition">giant|stay-alive</requirement>
     </route>
+    <route id="download_application_by_competition" pattern="/download/{competition}">
+        <default key="_controller">SarSportApplicationBundle:Application:downloadApplicationsByCompetition</default>
+        <requirement key="competition">giant|stay-alive</requirement>
+    </route>
 
     <route id="application_show" pattern="/{id}/show">
         <default key="_controller">SarSportApplicationBundle:Application:show</default>

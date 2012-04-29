@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * This file is part of the SarSportApplicationBundle package.
+ *
+ * (c) Dmitry Petrov aka fightmaster <old.fightmaster@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
+ */
+
 namespace SarSport\Bundle\ApplicationBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -11,6 +20,8 @@ use Symfony\Component\HttpFoundation\Response;
 use SarSport\Bundle\ApplicationBundle\Service\ApplicationService;
 use SarSport\Bundle\UserBundle\Entity\User;
 use SarSport\Bundle\ApplicationBundle\Model\ApplicationInterface;
+use SarSport\Bundle\ApplicationBundle\Twig\ApplicationExtension;
+use SarSport\Bundle\ApplicationBundle\Service\ExcelWriter;
 
 /**
  * Application controller.
@@ -34,6 +45,33 @@ class ApplicationController extends Controller
             'entities' => $entities,
             'competition' => $competition
         ));
+    }
+
+    /**
+     * Download xls file with applications
+     *
+     * @param $competition
+     */
+    public function downloadApplicationsByCompetitionAction($competition)
+    {
+        $service = $this->getApplicationService();
+        $twigExtension = $this->getTwigExtension();
+        $translator = $this->getTranslator();
+
+        $applications = $service->findByCompetition($competition);
+        $competitionName = $translator->trans($twigExtension->getCompetitionName($competition), array(), 'SarSportApplicationBundle');
+        $filename = $competitionName . '_' . date('d_m_y') . '.xls';
+
+        $excelWriter = $this->getExcelWriterService();
+        $excelWriter->setFilename($filename);
+        $excelWriter->writeTitle($competitionName);
+        $excelWriter->writeBody($applications);
+        // Redirect output to a client’s web browser (Excel5)
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="' . $filename . '"');
+        header('Cache-Control: max-age=0');
+        $excelWriter->close();
+        exit;
     }
 
     /**
@@ -214,7 +252,28 @@ class ApplicationController extends Controller
      */
     private function getApplicationService()
     {
-        return $this->container->get('sarsport_application.application_service');
+        return $this->container->get('sarsport_application.service.application');
+    }
+
+    /**
+     * @return ApplicationExtension
+     */
+    private function getTwigExtension()
+    {
+        return $this->container->get('sarsport_application.twig.application_extension');
+    }
+
+    /**
+     * @return ExcelWriter
+     */
+    private function getExcelWriterService()
+    {
+        return $this->container->get('sarsport_application.service.excel_writer');
+    }
+
+    private function getTranslator()
+    {
+        return $this->get('translator');
     }
 
     /**
