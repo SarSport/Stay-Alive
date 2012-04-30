@@ -2,7 +2,10 @@ vendor/*
 app/logs/*
 app/cache/*
 app/config/parameters.ini
+app/bootstrap*
 app/phpunit.xml
-web/bundles/*
+web/bundles/
+web/images/*
+web/js/*
 Capfile
 app/config/deploy.rb
