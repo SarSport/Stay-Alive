@@ -18,6 +18,7 @@ use SarSport\Bundle\ApplicationBundle\Form\Extension\ClassType;
 use SarSport\Bundle\ApplicationBundle\Form\Extension\CompetitionType;
 use SarSport\Bundle\ApplicationBundle\Form\Extension\GroupType;
 use SarSport\Bundle\ApplicationBundle\Form\Extension\YearType;
+use SarSport\Bundle\ApplicationBundle\Form\Extension\TShirtSizeType;
 
 class ApplicationType extends AbstractType
 {
@@ -37,11 +38,13 @@ class ApplicationType extends AbstractType
             ->add('firstPlayerBirthday', new YearType(), array('label' => 'application.birthday'))
             ->add('firstPlayerSex', new SexType(), array('label'=> 'application.sex'))
             ->add('firstPlayerTShirt', null, array('label' => 'application.t-shirt'))
+            ->add('firstPlayerTShirtSize', new TShirtSizeType(),  array('label' => 'application.t-shirt_size', 'required' => false))
             ->add('secondPlayerFirstName', null, array('label' => 'application.player_firstname'))
             ->add('secondPlayerLastName', null, array('label' => 'application.player_lastname'))
             ->add('secondPlayerBirthday', new YearType(), array('label' => 'application.birthday'))
             ->add('secondPlayerSex', new SexType(), array('label'=> 'application.sex'))
             ->add('secondPlayerTShirt', null,  array('label' => 'application.t-shirt'))
+            ->add('secondPlayerTShirtSize', new TShirtSizeType(),  array('label' => 'application.t-shirt_size', 'required' => false))
         ;
     }
 

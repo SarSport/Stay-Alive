@@ -56,8 +56,8 @@
                 <td>{{ entity.secondPlayerFirstName }} {{ entity.secondPlayerLastName }}</td>
                 <td>{{ entity.secondPlayerBirthday}}</td>
                 <td class="sarsport_application_boolean_{{entity.additionalMaps}}">{{ sarsport_application_get_boolean(entity.additionalMaps) | trans([], 'SarSportApplicationBundle') }}</td>
-                <td class="sarsport_application_boolean_{{entity.firstPlayerTShirt}}">{{ sarsport_application_get_boolean(entity.firstPlayerTShirt) | trans([], 'SarSportApplicationBundle') }}</td>
-                <td class="sarsport_application_boolean_{{entity.secondPlayerTShirt}}">{{ sarsport_application_get_boolean(entity.secondPlayerTShirt) | trans([], 'SarSportApplicationBundle') }}</td>
+                <td class="sarsport_application_boolean_{{entity.firstPlayerTShirt}}">{{ sarsport_application_get_boolean(entity.firstPlayerTShirt) | trans([], 'SarSportApplicationBundle') }}{% if (entity.firstPlayerTShirt and entity.firstPlayerTShirtSize) %} / {{ entity.firstPlayerTShirtSize }}{% endif %}</td>
+                <td class="sarsport_application_boolean_{{entity.secondPlayerTShirt}}">{{ sarsport_application_get_boolean(entity.secondPlayerTShirt) | trans([], 'SarSportApplicationBundle') }}{% if (entity.secondPlayerTShirt and entity.secondPlayerTShirtSize) %} / {{ entity.secondPlayerTShirtSize }}{% endif %}</td>
             </tr>
             {% endfor %}
             </tbody>

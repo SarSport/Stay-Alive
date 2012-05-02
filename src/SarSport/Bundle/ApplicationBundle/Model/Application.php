@@ -129,6 +129,26 @@ class Application implements ApplicationInterface
     protected $city;
 
     /**
+     * @var string
+     */
+    protected $paymentValue;
+
+    /**
+     * @var string
+     */
+    protected $paymentDescription;
+
+    /**
+     * @var integer
+     */
+    protected $firstPlayerTShirtSize;
+
+    /**
+     * @var integer
+     */
+    protected $secondPlayerTShirtSize;
+
+    /**
      * {@inheritDoc}
      *
      * @param boolean $additionalMaps
@@ -559,5 +579,81 @@ class Application implements ApplicationInterface
     public function getSecondPlayerLastName()
     {
         return $this->secondPlayerLastName;
+    }
+
+    /**
+     * @param int $firstPlayerTShirtSize
+     * @return Application
+     */
+    public function setFirstPlayerTShirtSize($firstPlayerTShirtSize)
+    {
+        $this->firstPlayerTShirtSize = $firstPlayerTShirtSize;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getFirstPlayerTShirtSize()
+    {
+        return $this->firstPlayerTShirtSize;
+    }
+
+    /**
+     * @param string $paymentDescription
+     * @return Application
+     */
+    public function setPaymentDescription($paymentDescription)
+    {
+        $this->paymentDescription = $paymentDescription;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPaymentDescription()
+    {
+        return $this->paymentDescription;
+    }
+
+    /**
+     * @param string $paymentValue
+     * @return Application
+     */
+    public function setPaymentValue($paymentValue)
+    {
+        $this->paymentValue = $paymentValue;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPaymentValue()
+    {
+        return $this->paymentValue;
+    }
+
+    /**
+     * @param int $secondPlayerTShirtSize
+     * @return Application
+     */
+    public function setSecondPlayerTShirtSize($secondPlayerTShirtSize)
+    {
+        $this->secondPlayerTShirtSize = $secondPlayerTShirtSize;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSecondPlayerTShirtSize()
+    {
+        return $this->secondPlayerTShirtSize;
     }
 }

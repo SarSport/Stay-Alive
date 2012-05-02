@@ -10,6 +10,7 @@ application:
   player_lastname: Lastname
   t-shirt: T-shirt
   t-shirt_short: T-s
+  t-shirt_size: T-shirt size
   city: City
   sex: Sex
   group: Group

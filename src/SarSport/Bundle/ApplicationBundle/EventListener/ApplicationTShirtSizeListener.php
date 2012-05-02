@@ -16,32 +16,33 @@ use SarSport\Bundle\ApplicationBundle\Event\ApplicationEvent;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
- * Sets null to all second player attributes if it is null
+ * Updates date and time in the application
  *
  * @author Dmitry Petrov aka fightmaster <old.fightmaster@gmail.com>
  */
-class ApplicationSecondPlayerListener implements EventSubscriberInterface
+class ApplicationTShirtSizeListener implements EventSubscriberInterface
 {
     /**
-     * Sets null to all second player attributes if it is null
+     * Update DateTime value in application
      *
-     * @param \SarSport\Bundle\ApplicationBundle\Event\ApplicationEvent $event
+     * @param ApplicationEvent $event
      * @return void
      */
-    public function checkSecondPlayer(ApplicationEvent $event)
+    public function fixedTShirtSizes(ApplicationEvent $event)
     {
         $application = $event->getApplication();
-        if ($application->getSecondPlayerFirstName() == null) {
-            $application->setSecondPlayerFirstName(null);
-            $application->setSecondPlayerBirthday(null);
-            $application->setSecondPlayerSex(null);
-            $application->setSecondPlayerTShirt(null);
+
+        if ($application->getFirstPlayerTShirtSize() == '') {
+            $application->setFirstPlayerTShirtSize(null);
+        }
+
+        if ($application->getSecondPlayerTShirtSize() == '') {
             $application->setSecondPlayerTShirtSize(null);
         }
     }
 
     static public function getSubscribedEvents()
     {
-        return array(Events::APPLICATION_PRE_PERSIST => 'checkSecondPlayer');
+        return array(Events::APPLICATION_PRE_PERSIST => 'fixedTShirtSizes');
     }
 }

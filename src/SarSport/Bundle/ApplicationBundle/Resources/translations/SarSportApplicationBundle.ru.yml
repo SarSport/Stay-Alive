@@ -10,6 +10,7 @@ application:
   player_lastname: Фамилия
   t-shirt: Футболка
   t-shirt_short: Фут.
+  t-shirt_size: Размер футболки
   city: Город
   sex: Пол
   group: Группа

@@ -22,8 +22,12 @@
         <field name="city" type="string" column="city" length="100"/>
         <field name="additionalMaps" column="additional_maps" type="boolean" nullable="true" />
         <field name="firstPlayerTShirt" column="first_player_t_shirt" type="boolean" nullable="true" />
+        <field name="firstPlayerTShirtSize" column="first_player_t_shirt_size" type="integer" nullable="true" />
         <field name="secondPlayerTShirt" column="second_player_t_shirt" type="boolean" nullable="true" />
+        <field name="secondPlayerTShirtSize" column="second_player_t_shirt_size" type="integer" nullable="true" />
         <field name="status" type="integer" column="status"/>
+        <field name="paymentValue" type="string" column="payment_value" length="50" nullable="true"/>
+        <field name="paymentDescription" type="string" column="payment_description" length="255" nullable="true"/>
         <field name="createdAt" type="datetime" column="created_at"/>
         <field name="updatedAt" type="datetime" column="updated_at" nullable="true"/>
         <field name="firstPlayerBirthday" type="integer" column="first_player_birthday"/>

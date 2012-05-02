@@ -16,8 +16,15 @@ use Symfony\Component\Form\AbstractType;
 /**
  * @author Dmitry Petrov aka fightmaster <old.fightmaster@gmail.com>
  */
-class YearType extends AbstractType
+class TShirtSizeType extends AbstractType
 {
+    /**
+     * T-shirt sizes
+     *
+     * @var array
+     */
+    public static $tShirtSizes = array(44 => 44, 46 => 46, 48 => 48, 50 => 50, 52 => 52, 54 => 54);
+
     /**
      * {@inheritdoc}
      */
@@ -31,7 +38,7 @@ class YearType extends AbstractType
      */
     public function getDefaultOptions(array $options)
     {
-        return array('choices'=> self::getYears());
+        return array('choices'=> static::getTShirtSizes());
     }
 
     /**
@@ -41,23 +48,17 @@ class YearType extends AbstractType
      */
     public function getName()
     {
-        return 'sarsport_application_form_type_year';
+        return 'sarsport_application_form_type_tshirt_size';
     }
 
     /**
-     * Returns years
+     * Returns t-shirt sizes
      *
      * @static
      * @return array
      */
-    private static function getYears()
+    public static function getTShirtSizes()
     {
-        $years = array();
-        for ($i = date('Y')-90; $i <= date('Y'); $i++) {
-            $years[$i] = $i;
-        }
-
-        return $years;
+        return static::$tShirtSizes;
     }
-
 }

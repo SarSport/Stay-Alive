@@ -23,17 +23,18 @@
         <service id="sarsport_application.listener.application_updated_at" class="SarSport\Bundle\ApplicationBundle\EventListener\ApplicationUpdatedAtListener">
             <!-- TODO: 2.1 <tag name="kernel.event_subscriber" /> -->
             <tag name="kernel.event_listener" event="sarsport_application.application.pre_persist" method="setUpdatedAt" />
-            <argument type="service" id="security.context" on-invalid="null" />
         </service>
         <service id="sarsport_application.listener.application_created_at" class="SarSport\Bundle\ApplicationBundle\EventListener\ApplicationCreatedAtListener">
             <!-- TODO: 2.1 <tag name="kernel.event_subscriber" /> -->
             <tag name="kernel.event_listener" event="sarsport_application.application.create" method="setCreatedAt" />
-            <argument type="service" id="security.context" on-invalid="null" />
+        </service>
+        <service id="sarsport_application.listener.application_t_shirt_size" class="SarSport\Bundle\ApplicationBundle\EventListener\ApplicationTShirtSizeListener">
+            <!-- TODO: 2.1 <tag name="kernel.event_subscriber" /> -->
+            <tag name="kernel.event_listener" event="sarsport_application.application.pre_persist" method="fixedTShirtSizes" />
         </service>
         <service id="sarsport_application.listener.application_second_player" class="SarSport\Bundle\ApplicationBundle\EventListener\ApplicationSecondPlayerListener">
             <!-- TODO: 2.1 <tag name="kernel.event_subscriber" /> -->
             <tag name="kernel.event_listener" event="sarsport_application.application.pre_persist" method="checkSecondPlayer" />
-            <argument type="service" id="security.context" on-invalid="null" />
         </service>
         <service id="sarsport_application.listener.application_notifier" class="SarSport\Bundle\ApplicationBundle\EventListener\ApplicationNotifierListener">
             <!-- TODO: 2.1 <tag name="kernel.event_subscriber" /> -->

@@ -253,4 +253,48 @@ interface ApplicationInterface
      * @return string
      */
     public function getSecondPlayerLastName();
+
+    /**
+     * @param int $firstPlayerTShirtSize
+     * @return ApplicationInterface
+     */
+    public function setFirstPlayerTShirtSize($firstPlayerTShirtSize);
+
+    /**
+     * @return int
+     */
+    public function getFirstPlayerTShirtSize();
+
+    /**
+     * @param string $paymentDescription
+     * @return ApplicationInterface
+     */
+    public function setPaymentDescription($paymentDescription);
+
+    /**
+     * @return string
+     */
+    public function getPaymentDescription();
+
+    /**
+     * @param string $paymentValue
+     * @return ApplicationInterface
+     */
+    public function setPaymentValue($paymentValue);
+
+    /**
+     * @return string
+     */
+    public function getPaymentValue();
+
+    /**
+     * @param int $secondPlayerTShirtSize
+     * @return ApplicationInterface
+     */
+    public function setSecondPlayerTShirtSize($secondPlayerTShirtSize);
+
+    /**
+     * @return int
+     */
+    public function getSecondPlayerTShirtSize();
 }
