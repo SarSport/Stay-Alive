@@ -137,7 +137,6 @@ class ApplicationController extends Controller
             return $this->redirect($this->generateUrl('application_show', array('id' => $entity->getId())));
             
         }
-        $tmp =  $form->createView();
 
         return $this->render('SarSportApplicationBundle:Application:new.html.twig', array(
             'entity' => $entity,
