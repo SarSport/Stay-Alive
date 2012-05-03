@@ -111,3 +111,6 @@ knp_last_tweets:
         driver: zend_cache
         options:
             cache_name: knp_last_tweets
+
+vich_uploader:
+    db_driver: orm

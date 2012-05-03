@@ -28,7 +28,8 @@ class AppKernel extends Kernel
             new SarSport\Bundle\ApplicationBundle\SarSportApplicationBundle(),
             new Stfalcon\Bundle\PaymentBundle\StfalconPaymentBundle(),
             new Knp\Bundle\LastTweetsBundle\KnpLastTweetsBundle(),
-            new Knp\Bundle\ZendCacheBundle\KnpZendCacheBundle()
+            new Knp\Bundle\ZendCacheBundle\KnpZendCacheBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

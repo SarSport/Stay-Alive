@@ -102,6 +102,9 @@
 [Buzz]
     git=https://github.com/kriswallsmith/Buzz.git
     target=Buzz
+[VichUploaderBundle]
+    git=git://github.com/dustin10/VichUploaderBundle.git
+    target=/bundles/Vich/UploaderBundle
 ;;;;;;;;;;;;;;;;;;;;;Excel Reader;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [PHPExcel]
     git=https://github.com/clariondoor/PHPExcel.git
