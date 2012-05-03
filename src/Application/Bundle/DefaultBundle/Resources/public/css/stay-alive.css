@@ -50,3 +50,13 @@ h1, h2, h3, h4, h5 {
     color: #005580;
     margin-bottom: 5px;
 }
+.knp_last_tweets ul {
+    margin-left:0;
+    list-style:none;
+}
+.knp_last_tweets li {
+    border-bottom-width: 1px;
+    border-bottom-color: #1c567f;
+    border-bottom-style: solid;
+
+};

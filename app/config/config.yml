@@ -92,3 +92,22 @@ stfalcon_payment:
     interkassa:
         shop_id: %interkassa_shop_id%
         secret_key: %interkassa_secret_key%
+
+knp_zend_cache:
+    templates:
+        knp_last_tweets:
+            frontend:
+                name: Core
+                options:
+                    lifetime: 300
+                    automatic_serialization: true
+            backend:
+                name: File
+                options:
+                    cache_dir: %kernel.root_dir%/cache/%kernel.environment%
+
+knp_last_tweets:
+    fetcher:
+        driver: zend_cache
+        options:
+            cache_name: knp_last_tweets

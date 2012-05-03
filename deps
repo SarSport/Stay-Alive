@@ -85,6 +85,22 @@
     git=https://github.com/fightmaster/PaymentBundle.git
     target=bundles/Stfalcon/Bundle/PaymentBundle
 
+[KnpLastTweetsBundle]
+    git=http://github.com/KnpLabs/KnpLastTweetsBundle.git
+    target=bundles/Knp/Bundle/LastTweetsBundle
+
+[KnpZendCacheBundle]
+    git=http://github.com/KnpLabs/KnpZendCacheBundle.git
+    target=bundles/Knp/Bundle/ZendCacheBundle
+[ZendCache]
+    git=https://github.com/KnpLabs/zend-cache.git
+    target=Zend/Cache
+[ZendFilter]
+    git=https://github.com/KnpLabs/zend-filter.git
+    target=Zend/Filter
+[Buzz]
+    git=https://github.com/kriswallsmith/Buzz.git
+    target=Buzz
 ;;;;;;;;;;;;;;;;;;;;;Excel Reader;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 [PHPExcel]
     git=https://github.com/clariondoor/PHPExcel.git

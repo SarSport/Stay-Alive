@@ -26,7 +26,9 @@ class AppKernel extends Kernel
             new Fightmaster\SecurityExtensionBundle\FightmasterSecurityExtensionBundle(),
             /*new Escape\WSSEAuthenticationBundle\EscapeWSSEAuthenticationBundle(),*/
             new SarSport\Bundle\ApplicationBundle\SarSportApplicationBundle(),
-            new Stfalcon\Bundle\PaymentBundle\StfalconPaymentBundle()
+            new Stfalcon\Bundle\PaymentBundle\StfalconPaymentBundle(),
+            new Knp\Bundle\LastTweetsBundle\KnpLastTweetsBundle(),
+            new Knp\Bundle\ZendCacheBundle\KnpZendCacheBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
