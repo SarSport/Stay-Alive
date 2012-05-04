@@ -61,6 +61,8 @@
                                 {% block sidebar_right %}
                                 <div class="span3 page-sidebar-right">
                                     <div class="right_category">
+                                        <h4><a href="https://twitter.com/OvG_SarSport">{{ 'stay-alive.menu-right.lastTweets' | trans }}</a></h4>
+                                        {% render "KnpLastTweetsBundle:Twitter:lastTweets" with {'username': 'OvG_SarSport', 'limit': 5} %}
                                         <h4>{{ 'stay-alive.menu-right.links' | trans }}</h4>
                                         <ul style="list-style:none;margin:0px;padding:0px;border:0px;">
 
