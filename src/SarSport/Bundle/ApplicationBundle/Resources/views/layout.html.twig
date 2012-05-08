@@ -2,7 +2,7 @@
 {% block stylesheets %}
     {% stylesheets '@SarSportApplicationBundle/Resources/public/css/application.css'%}
     <link rel="stylesheet" type="text/css" href="{{ asset_url }}">
-    {% endstylesheetsg %}
+    {% endstylesheets %}
 {% endblock %}
 {% block flashMessages %}
     {% for key, message in app.session.getFlashes() %}
