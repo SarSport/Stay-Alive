@@ -2,6 +2,10 @@ SarSportApplicationBundle_application:
     resource: "@SarSportApplicationBundle/Resources/config/routing/application.xml"
     prefix:   /application
 
+FightmasterGalleryBundle_gallery:
+    resource: "@FightmasterGalleryBundle/Resources/config/routing/gallery.xml"
+    prefix:   /gallery
+
 SarSportRestUserBundle:
     resource: "@SarSportRestUserBundle/Resources/config/routing.yml"
     prefix:   /

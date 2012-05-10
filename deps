@@ -78,6 +78,10 @@
     git=https://github.com/fightmaster/FightmasterPublicationBundle.git
     target=bundles/Fightmaster/PublicationBundle
 
+[FightmasterGalleryBundle]
+    git=git@github.com:fightmaster/FightmasterGalleryBundle.git
+    target=bundles/Fightmaster/Bundle/GalleryBundle
+
 [FightmasterSecurityExtensionBundle]
     git=https://github.com/fightmaster/FightmasterSecurityExtensionBundle.git
     target=bundles/Fightmaster/SecurityExtensionBundle

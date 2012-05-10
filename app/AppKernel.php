@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new SarSport\Bundle\RestUserBundle\SarSportRestUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Fightmaster\SecurityExtensionBundle\FightmasterSecurityExtensionBundle(),
+            new Fightmaster\Bundle\GalleryBundle\FightmasterGalleryBundle(),
             /*new Escape\WSSEAuthenticationBundle\EscapeWSSEAuthenticationBundle(),*/
             new SarSport\Bundle\ApplicationBundle\SarSportApplicationBundle(),
             new Stfalcon\Bundle\PaymentBundle\StfalconPaymentBundle(),

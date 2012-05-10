@@ -114,3 +114,6 @@ knp_last_tweets:
 
 vich_uploader:
     db_driver: orm
+fightmaster_gallery:
+    gallery_class: Application\Bundle\DefaultBundle\Entity\Gallery
+    image_class: none
