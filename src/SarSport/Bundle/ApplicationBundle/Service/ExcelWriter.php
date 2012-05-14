@@ -95,9 +95,21 @@ class ExcelWriter
             $this->worksheet->setCellValueByColumnAndRow(9, $i, $application->getSecondPlayerBirthday());
             $this->worksheet->setCellValueByColumnAndRow(10, $i, $application->getPhonenumber());
             $this->worksheet->setCellValueByColumnAndRow(11, $i, $this->translator->trans($this->helper->getBoolean($application->getAdditionalMaps()), array(), 'SarSportApplicationBundle'));
-            $this->worksheet->setCellValueByColumnAndRow(12, $i, $this->translator->trans($this->helper->getBoolean($application->getFirstPlayerTShirt()), array(), 'SarSportApplicationBundle'));
-            $this->worksheet->setCellValueByColumnAndRow(13, $i, $this->translator->trans($this->helper->getBoolean($application->getSecondPlayerTShirt()), array(), 'SarSportApplicationBundle'));
+            if ($application->getFirstPlayerTShirt() && $application->getFirstPlayerTShirtSize()) {
+                $fPlayer = ' / ' . $application->getFirstPlayerTShirtSize();
+            } else {
+                $fPlayer = '';
+            }
+            if ($application->getSecondPlayerTShirt() && $application->getSecondPlayerTShirtSize()) {
+                $sPlayer = ' / ' . $application->getSecondPlayerTShirtSize();
+            } else {
+                $sPlayer = '';
+            }
+            $this->worksheet->setCellValueByColumnAndRow(12, $i, $this->translator->trans($this->helper->getBoolean($application->getFirstPlayerTShirt()), array(), 'SarSportApplicationBundle') . $fPlayer);
+            $this->worksheet->setCellValueByColumnAndRow(13, $i, $this->translator->trans($this->helper->getBoolean($application->getSecondPlayerTShirt()), array(), 'SarSportApplicationBundle') . $sPlayer);
             $this->worksheet->setCellValueByColumnAndRow(14, $i, $this->translator->trans($this->helper->getBoolean($application->getStatus()), array(), 'SarSportApplicationBundle'));
+            $this->worksheet->setCellValueByColumnAndRow(15, $i, $application->getPaymentValue());
+            $this->worksheet->setCellValueByColumnAndRow(16, $i, $application->getPaymentDescription());
             $i++;
         }
     }
@@ -144,10 +156,14 @@ class ExcelWriter
         $this->worksheet->setCellValueByColumnAndRow(11, 1, 'Доп. к/к');
         $this->worksheet->getColumnDimensionByColumn(11)->setWidth(6);
         $this->worksheet->setCellValueByColumnAndRow(12, 1, 'Фут.1');
-        $this->worksheet->getColumnDimensionByColumn(12)->setWidth(6);
+        $this->worksheet->getColumnDimensionByColumn(12)->setWidth(16);
         $this->worksheet->setCellValueByColumnAndRow(13, 1, 'Фут.2');
-        $this->worksheet->getColumnDimensionByColumn(13)->setWidth(6);
+        $this->worksheet->getColumnDimensionByColumn(13)->setWidth(16);
         $this->worksheet->setCellValueByColumnAndRow(14, 1, 'Оплата');
         $this->worksheet->getColumnDimensionByColumn(14)->setWidth(6);
+        $this->worksheet->setCellValueByColumnAndRow(15, 1, 'Сумма');
+        $this->worksheet->getColumnDimensionByColumn(15)->setWidth(6);
+        $this->worksheet->setCellValueByColumnAndRow(16, 1, 'Описание');
+        $this->worksheet->getColumnDimensionByColumn(16)->setWidth(50);
     }
 }
