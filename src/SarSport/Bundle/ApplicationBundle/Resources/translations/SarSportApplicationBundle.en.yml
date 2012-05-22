@@ -21,6 +21,7 @@ application:
   yes: yes
   no: no
   payment: Payment
+  deadline: Has expired time of the application through the website. Amend the application or created a new file, you can send data by email %email%.
   confirm:
     remove_application: Are you sure you want to delete the application?
 

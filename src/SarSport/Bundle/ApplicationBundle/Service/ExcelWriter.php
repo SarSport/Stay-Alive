@@ -87,11 +87,11 @@ class ExcelWriter
             $this->worksheet->setCellValueByColumnAndRow(1, $i, $application->getTeamName());
             $this->worksheet->setCellValueExplicitByColumnAndRow(2, $i, $this->translator->trans($this->helper->getClassName($application->getClass()), array(), 'SarSportApplicationBundle'));
             $this->worksheet->setCellValueByColumnAndRow(3, $i, $this->translator->trans($this->helper->getGroupName($application->getGroup()), array(), 'SarSportApplicationBundle'));
-            $this->worksheet->setCellValueByColumnAndRow(4, $i, strtoupper($application->getFirstPlayerLastName()));
-            $this->worksheet->setCellValueByColumnAndRow(5, $i, strtoupper($application->getFirstPlayerFirstName()));
+            $this->worksheet->setCellValueByColumnAndRow(4, $i, $this->strToUpper($application->getFirstPlayerLastName()));
+            $this->worksheet->setCellValueByColumnAndRow(5, $i, $this->strToUpper($application->getFirstPlayerFirstName()));
             $this->worksheet->setCellValueByColumnAndRow(6, $i, $application->getFirstPlayerBirthday());
-            $this->worksheet->setCellValueByColumnAndRow(7, $i, strtoupper($application->getSecondPlayerLastName()));
-            $this->worksheet->setCellValueByColumnAndRow(8, $i, strtoupper($application->getSecondPlayerFirstName()));
+            $this->worksheet->setCellValueByColumnAndRow(7, $i, $this->strToUpper($application->getSecondPlayerLastName()));
+            $this->worksheet->setCellValueByColumnAndRow(8, $i, $this->strToUpper($application->getSecondPlayerFirstName()));
             $this->worksheet->setCellValueByColumnAndRow(9, $i, $application->getSecondPlayerBirthday());
             $this->worksheet->setCellValueByColumnAndRow(10, $i, $application->getPhonenumber());
             $this->worksheet->setCellValueByColumnAndRow(11, $i, $this->translator->trans($this->helper->getBoolean($application->getAdditionalMaps()), array(), 'SarSportApplicationBundle'));
@@ -165,5 +165,14 @@ class ExcelWriter
         $this->worksheet->getColumnDimensionByColumn(15)->setWidth(6);
         $this->worksheet->setCellValueByColumnAndRow(16, 1, 'Описание');
         $this->worksheet->getColumnDimensionByColumn(16)->setWidth(50);
+    }
+
+    /**
+     * @param $string
+     * @return string
+     */
+    private function strToUpper($string)
+    {
+        return mb_strtoupper($string, 'UTF-8');
     }
 }

@@ -111,10 +111,15 @@ class ApplicationController extends Controller
         $entity = $service->create();
         $this->fillDefaultData($entity);
         $form   = $this->createForm(new ApplicationType(), $entity);
+        $enabled = false;
+        if ($this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            $enabled = true;
+        }
 
         return $this->render('SarSportApplicationBundle:Application:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView()
+            'form'   => $form->createView(),
+            'enabled' => $enabled
         ));
     }
 
@@ -130,6 +135,10 @@ class ApplicationController extends Controller
         $request = $this->getRequest();
         $form    = $this->createForm(new ApplicationType(), $entity);
         $form->bindRequest($request);
+        $enabled = false;
+        if ($this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            $enabled = true;
+        }
 
         if ($form->isValid()) {
             $service->save($entity);
@@ -140,7 +149,8 @@ class ApplicationController extends Controller
 
         return $this->render('SarSportApplicationBundle:Application:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView()
+            'form'   => $form->createView(),
+            'enabled' => $enabled
         ));
     }
 
@@ -162,11 +172,16 @@ class ApplicationController extends Controller
 
         $editForm = $this->createForm(new ApplicationType(), $entity);
         $deleteForm = $this->createDeleteForm($id);
+        $enabled = false;
+        if ($this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            $enabled = true;
+        }
 
         return $this->render('SarSportApplicationBundle:Application:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'enabled' => $enabled
         ));
     }
 
@@ -192,8 +207,12 @@ class ApplicationController extends Controller
         $request = $this->getRequest();
 
         $editForm->bindRequest($request);
+        $enabled = false;
+        if ($this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            $enabled = true;
+        }
 
-        if ($editForm->isValid()) {
+        if ($editForm->isValid() && $enabled) {
             $service->save($entity);
 
             return $this->redirect($this->generateUrl('application_edit', array('id' => $id)));
@@ -219,15 +238,20 @@ class ApplicationController extends Controller
         $request = $this->getRequest();
 
         $form->bindRequest($request);
+        $enabled = false;
+        if ($this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            $enabled = true;
+        }
 
-        if ($form->isValid()) {
-            $service = $this->getApplicationService();
-            $entity = $service->findApplicationById($id);
+        $service = $this->getApplicationService();
+        $entity = $service->findApplicationById($id);
 
-            if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Application entity.');
-            }
-            $competition = $entity->getCompetition();
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Application entity.');
+        }
+        $competition = $entity->getCompetition();
+
+        if ($form->isValid() && $enabled) {
             $service->remove($entity);
         }
 
