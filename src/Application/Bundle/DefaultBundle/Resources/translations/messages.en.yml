@@ -9,6 +9,7 @@ stay-alive:
         contacts: Contacts As
     menu-left:
       home: Home
+      results: Results
       take_part: Take part
       stay-alive: Multirace
       giant: Cycling race

@@ -9,6 +9,7 @@ stay-alive:
         contacts: Контакты
     menu-left:
       home: Главная
+      results: Результаты
       take_part: Подать заявку
       stay-alive: Мультигонка
       giant: Веломарафон
