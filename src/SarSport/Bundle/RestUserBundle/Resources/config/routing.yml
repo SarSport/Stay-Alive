@@ -1,3 +1,0 @@
-SarSportRestUserBundle_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: SarSportRestUserBundle:Default:index }

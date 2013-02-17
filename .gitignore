@@ -1,11 +1,12 @@
 vendor/*
 app/logs/*
 app/cache/*
-app/config/parameters.ini
+app/config/parameters.yml
 app/bootstrap*
 app/phpunit.xml
 web/bundles/
 web/images/*
 web/js/*
+web/css/*
 Capfile
 app/config/deploy.rb
