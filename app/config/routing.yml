@@ -2,10 +2,6 @@ SarSportApplicationBundle_application:
     resource: "@SarSportApplicationBundle/Resources/config/routing/application.xml"
     prefix:   /application
 
-SarSportRestUserBundle:
-    resource: "@SarSportRestUserBundle/Resources/config/routing.yml"
-    prefix:   /
-
 SarSportUserBundle:
     resource: "@SarSportUserBundle/Resources/config/routing.yml"
     prefix:   /

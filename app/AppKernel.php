@@ -13,22 +13,20 @@ class AppKernel extends Kernel
             new Symfony\Bundle\TwigBundle\TwigBundle(),
             new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
-            new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new JMS\AopBundle\JMSAopBundle(),
+            new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
 
 
             new Application\Bundle\DefaultBundle\DefaultBundle(),
             new SarSport\Bundle\UserBundle\SarSportUserBundle(),
-            new SarSport\Bundle\RestUserBundle\SarSportRestUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new Fightmaster\SecurityExtensionBundle\FightmasterSecurityExtensionBundle(),
-            /*new Escape\WSSEAuthenticationBundle\EscapeWSSEAuthenticationBundle(),*/
-            new SarSport\Bundle\ApplicationBundle\SarSportApplicationBundle(),
+            new SarSport\Bundle\SarSportApplicationBundle\SarSportApplicationBundle(),
             new Stfalcon\Bundle\PaymentBundle\StfalconPaymentBundle(),
-            new Knp\Bundle\LastTweetsBundle\KnpLastTweetsBundle(),
-            new Knp\Bundle\ZendCacheBundle\KnpZendCacheBundle()
+            new \Knp\Bundle\LastTweetsBundle\KnpLastTweetsBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
