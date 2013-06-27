@@ -21,6 +21,9 @@
                     <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
                 </li>
                 <li>
+                    <a href="{{ path('fos_user_resetting_request') }}">{{ 'stay-alive.menu-top.forgot_password' | trans }}</a>
+                </li>
+                <li>
                     <a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
                 </li>
                 {% endif %}
