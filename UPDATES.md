@@ -1,3 +1,6 @@
+* v 2.0.1 - 27.06.2013
+** Обновление до Symfony 2.1.11
+
 * v 2.0.0 - 17.02.2013
 ** Обновление до Symfony 2.1.7
 ** SarSportApplicationBundle и SarSportUserBundle вынесены в отдельные репозитории

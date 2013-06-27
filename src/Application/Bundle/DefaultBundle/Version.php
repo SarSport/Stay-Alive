@@ -9,5 +9,5 @@ namespace Application\Bundle\DefaultBundle;
  */
 class Version
 {
-    const VERSION = '2.0.0';
+    const VERSION = '2.0.1';
 }
