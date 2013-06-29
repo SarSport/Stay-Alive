@@ -28,7 +28,7 @@
         "kriswallsmith/assetic": "1.1.*@dev",
 
         "sarsport/sarsport-user-bundle": "dev-master",
-        "sarsport/sarsport-application-bundle": "dev-master",
+        "sarsport/sarsport-application-bundle": "dev-stay-alive-2013",
         "stfalcon/payment-bundle": "dev-master",
         "knplabs/knp-last-tweets-bundle": "dev-master"
     },

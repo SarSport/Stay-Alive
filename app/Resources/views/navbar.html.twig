@@ -6,25 +6,17 @@
 
 <ul class="navbar">
     <li><a href="{{ path('DefaultBundle_homepage') }}"><p class="navbar_item navbar_home">{{ 'stay-alive.menu-left.home' | trans }}</p></a></li>
-    <li><a href="http://ovg.sarsport.ru/files/results.xls"><p class="navbar_item navbar_results">{{ 'stay-alive.menu-left.results' | trans }}</p></a></li>
-
-    <li><h3>{{ 'stay-alive.menu-left.stay-alive' | trans }}</h3></li>
-    <li><a href="{{ path('DefaultBundle_static_page', {'slug': 'reglament-stay-alive'}) }}"><p class="navbar_item navbar_reglament">{{ 'stay-alive.menu-left.reglament' | trans }}</p></a></li>
-    <li><a href="{{ path('DefaultBundle_static_page', {'slug': 'information-stay-alive'}) }}"><p class="navbar_item navbar_information">{{ 'stay-alive.menu-left.information' | trans }}</p></a></li>
-    <li><a href="{{ path('DefaultBundle_static_page', {'slug': 'faq-stay-alive'}) }}"><p class="navbar_item navbar_forum">{{ 'stay-alive.menu-left.faq' | trans }}</p></a></li>
+    {#<li><a href="http://ovg.sarsport.ru/files/results.xls"><p class="navbar_item navbar_results">{{ 'stay-alive.menu-left.results' | trans }}</p></a></li>#}
+    <li><a href="{{ path('DefaultBundle_static_page', {'slug': 'reglament-stay-alive-2013'}) }}"><p class="navbar_item navbar_reglament">{{ 'stay-alive.menu-left.reglament' | trans }}</p></a></li>
+    <li><a href="{{ path('DefaultBundle_static_page', {'slug': 'information-stay-alive-2013'}) }}"><p class="navbar_item navbar_information">{{ 'stay-alive.menu-left.information' | trans }}</p></a></li>
+    <li><a href="{{ path('DefaultBundle_static_page', {'slug': 'faq-stay-alive-2013'}) }}"><p class="navbar_item navbar_forum">{{ 'stay-alive.menu-left.faq' | trans }}</p></a></li>
     <li><a href="{{ path('application_new') }}"><p class="navbar_item navbar_join">{{ 'stay-alive.menu-left.take_part' | trans }}</p></a></li>
     <li><a href="{{ path('interkassa_payment_new') }}"><p class="navbar_item navbar_pay">{{ 'stay-alive.menu-left.pay' | trans }}</p></a></li>
-    <li><a href="{{ path('application_by_competition', {'competition': 'stay-alive'}) }}"><p class="navbar_item navbar_members">{{ 'stay-alive.menu-left.players' | trans }}</p></a></li>
-
-    <li><h3>{{ 'stay-alive.menu-left.giant' | trans }}</h3></li>
-    <li><a href="{{ path('DefaultBundle_static_page', {'slug': 'reglament-giant'}) }}"><p class="navbar_item navbar_reglament">{{ 'stay-alive.menu-left.reglament' | trans }}</p></a></li>
-    <li><a href="{{ path('DefaultBundle_static_page', {'slug': 'information-giant'}) }}"><p class="navbar_item navbar_information">{{ 'stay-alive.menu-left.information' | trans }}</p></a></li>
-    <li><a href="{{ path('application_new') }}"><p class="navbar_item navbar_join">{{ 'stay-alive.menu-left.take_part' | trans }}</p></a></li>
-    <li><a href="{{ path('interkassa_payment_new') }}"><p class="navbar_item navbar_pay">{{ 'stay-alive.menu-left.pay' | trans }}</p></a></li>
-    <li><a href="{{ path('application_by_competition', {'competition': 'giant'}) }}"><p class="navbar_item navbar_members">{{ 'stay-alive.menu-left.players' | trans }}</p></a></li>
+    <li><a href="{{ path('application_by_competition', {'competition': 'stay-alive-2013'}) }}"><p class="navbar_item navbar_members">{{ 'stay-alive.menu-left.players' | trans }}</p></a></li>
 
     <li><h3>{{ 'stay-alive.menu-left.archive' | trans }}</h3></li>
-    <li><a href="http://ovg-old.sarsport.ru">{{ 'stay-alive.menu-left.ovg_old' | trans }}</a></li>
+    <li><a href="http://2012-ovg.sarsport.ru">{{ 'stay-alive.menu-left.2012_ovg' | trans }}</a></li>
+    <li><a href="http://ovg-old.sarsport.ru">{{ 'stay-alive.menu-left.2011_ovg' | trans }}</a></li>
     {#<li><a href="#"><p class="navbar_item navbar_article">{{ 'stay-alive.menu-left.article' | trans }}</p></a></li>
     <li><a href="#"><p class="navbar_item navbar_photo">{{ 'stay-alive.menu-left.photo' | trans }}</p></a></li>
     <li><a href="#"><p class="navbar_item navbar_video">{{ 'stay-alive.menu-left.video' | trans }}</p></a></li>#}

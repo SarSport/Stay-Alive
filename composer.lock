@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "005af631fd285356513938a18fdc12b4",
+    "hash": "64dafb2676926b70dfe23fb8b64971f9",
     "packages": [
         {
             "name": "doctrine/common",
@@ -987,17 +987,17 @@
         },
         {
             "name": "sarsport/sarsport-application-bundle",
-            "version": "dev-master",
+            "version": "dev-stay-alive-2013",
             "target-dir": "SarSport/Bundle/SarSportApplicationBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SarSport/SarSportApplicationBundle.git",
-                "reference": "87dd8261961612377c6f017ee2cc1df74b240155"
+                "reference": "b94abeb94ef38946512342d29ac215ab0f25eb10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SarSport/SarSportApplicationBundle/zipball/87dd8261961612377c6f017ee2cc1df74b240155",
-                "reference": "87dd8261961612377c6f017ee2cc1df74b240155",
+                "url": "https://api.github.com/repos/SarSport/SarSportApplicationBundle/zipball/b94abeb94ef38946512342d29ac215ab0f25eb10",
+                "reference": "b94abeb94ef38946512342d29ac215ab0f25eb10",
                 "shasum": ""
             },
             "require": {
@@ -1023,7 +1023,7 @@
             ],
             "authors": [
                 {
-                    "name": "Dmitry Petrov",
+                    "name": "Dmitry Petrov aka fightmaster",
                     "email": "old.fightmaster@gmail.com",
                     "role": "Developer"
                 }
@@ -1035,7 +1035,7 @@
                 "rogaining",
                 "sport"
             ],
-            "time": "2013-02-24 16:32:01"
+            "time": "2013-06-29 13:42:20"
         },
         {
             "name": "sarsport/sarsport-user-bundle",

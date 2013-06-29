@@ -23,7 +23,8 @@ stay-alive:
       article: Articles
       pay: Pay for part
       faq: FAQ
-      ovg_old: Stay Alive 2011
+      2011_ovg: Stay Alive 2011
+      2012_ovg: Stay Alive 2012
     menu-right:
       lastTweets: Last tweets
       links: Links
