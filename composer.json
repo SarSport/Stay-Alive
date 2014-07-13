@@ -16,7 +16,7 @@
         "symfony/symfony": "2.1.*@stable",
         "doctrine/orm": ">=2.2.3,<2.4-dev",
         "doctrine/doctrine-bundle": "1.1.*",
-        "twig/extensions": "1.0.*@dev",
+        "twig/extensions": "1.0.*@stable",
         "symfony/assetic-bundle": "2.3.*",
         "symfony/swiftmailer-bundle": "2.1.*",
         "symfony/monolog-bundle": "2.1.*",
@@ -28,7 +28,7 @@
         "kriswallsmith/assetic": "1.1.*@dev",
 
         "sarsport/sarsport-user-bundle": "dev-master",
-        "sarsport/sarsport-application-bundle": "dev-stay-alive-2013",
+        "sarsport/sarsport-application-bundle": "dev-stay-alive-2014",
         "stfalcon/payment-bundle": "dev-master",
         "knplabs/knp-last-tweets-bundle": "dev-master"
     },
